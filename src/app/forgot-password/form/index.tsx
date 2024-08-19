@@ -6,12 +6,11 @@ import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
+import LoginCard from "@/app/login/ui/LoginCard";
 import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
-import { SimpleText } from "@/components/ui/typography";
 
 import { ForgotPasswordFormType, ForgotPasswordSchema } from "./forgotPasswordValidation";
-import LoginCard from "@/app/login/ui/LoginCard";
 
 export default function ForgotPasswordForm() {
   const router = useRouter();

@@ -10,10 +10,10 @@ import {
   Label,
   ValidationResult,
 } from "react-aria-components";
+import { Controller, useFormContext } from "react-hook-form";
 import { tv } from "tailwind-variants";
 
 import { composeTailwindRenderProps } from "@/components/utils";
-import { Controller, useFormContext } from "react-hook-form";
 
 export interface CheckboxGroupProps extends Omit<AriaCheckboxGroupProps, "children"> {
   label?: string;

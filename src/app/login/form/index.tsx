@@ -6,15 +6,15 @@ import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
+import { FormCheckbox } from "@/components/form/checkbox";
 import { FormPasswordInput } from "@/components/form/password-input";
 import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
 import LinkButton from "@/components/ui/button/link-button";
 import { SimpleText } from "@/components/ui/typography";
 
-import { LoginFormType, LoginSchema } from "./loginValidation";
-import { FormCheckbox } from "@/components/form/checkbox";
 import LoginCard from "../ui/LoginCard";
+import { LoginFormType, LoginSchema } from "./loginValidation";
 
 export default function LoginForm() {
   const router = useRouter();

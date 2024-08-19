@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 
-import RegisterForm from "./form";
 import LoginLayout from "@/layouts/LoginLayout";
+
+import RegisterForm from "./form";
 
 export const metadata: Metadata = {
   title: "Widgetjoy | Register",
