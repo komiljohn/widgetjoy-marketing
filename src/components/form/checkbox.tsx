@@ -56,14 +56,14 @@ const boxStyles = tv({
       true: "bg-disabled",
     },
     isFocused: {
-      true: "shadow-[0_0_0_4px_#F1F2F4]",
+      true: "shadow-[0_0_0_4px_rgb(241,242,244)]",
     },
   },
   compoundVariants: [
     {
       isFocused: true,
       isSelected: true,
-      class: "shadow-[0_0_0_4px_#FFD5C8]",
+      class: "shadow-[0_0_0_4px_rgb(255,213,200)]",
     },
   ],
 });
