@@ -14,10 +14,7 @@ export default function ToastProvider() {
       {(t) => (
         <ToastBar toast={t}>
           {({ message }) => (
-            <div
-              className="border-border-primary rounded-xl flex items-center gap-0.5 relative"
-              style={{ paddingRight: "44px", minWidth: "200px" }}
-            >
+            <div className="border-border-primary rounded-xl flex items-center gap-0.5 relative pr-11 min-w-[200px]">
               <CheckCirclesSvg />
               <div>
                 <SimpleText className="text-button-secondary-fg mb-3 font-semibold">{message}</SimpleText>
@@ -28,8 +25,7 @@ export default function ToastProvider() {
                   onClick={() => toast.dismiss(t.id)}
                   color="#98A2B3"
                   size={20}
-                  className="absolute cursor-pointer"
-                  style={{ right: "6px", top: "8px" }}
+                  className="absolute cursor-pointer top-2 right-1.5"
                 />
               )}
             </div>
