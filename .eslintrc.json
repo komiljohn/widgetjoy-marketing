@@ -5,11 +5,11 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:@next/next/recommended",
+    "plugin:storybook/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:storybook/recommended",
     "prettier"
   ],
   "rules": {
