@@ -35,7 +35,6 @@ const config: Config = {
         "border-dark-primary": "#333741",
         "border-brand": "#FFA170",
         "button-secondary-fg": "#344054",
-        "button-secondary-bg_hover": "#F9FAFB",
         "error-primary": "#D92D20",
         "fg-success-primary": "#079455",
       },
