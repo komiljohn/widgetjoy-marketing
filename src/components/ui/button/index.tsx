@@ -11,7 +11,7 @@ export interface ButtonProps extends RACButtonProps {
 }
 
 const button = tv({
-  base: "transition rounded-md border flex gap-1.5 items-center justify-center w-full cursor-pointer font-semibold h-fit",
+  base: "transition rounded-md border flex gap-1.5 items-center justify-center cursor-pointer font-semibold h-fit",
   variants: {
     variant: {
       primary:

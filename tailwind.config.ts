@@ -50,6 +50,8 @@ const config: Config = {
       backgroundImage: {
         "login-light-bg": "url(/icons/login-light-bg.svg)",
         "login-dark-bg": "url(/icons/login-dark-bg.svg)",
+        "404-light-bg": "url(/icons/404-light-bg.svg)",
+        "404-dark-bg": "url(/icons/404-dark-bg.svg)",
       },
     },
   },
