@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 
 import { SimpleText } from "@/components/ui/typography";
 
-import { LogoIconSvg } from "../../../../public/icons";
+import { LogoIconSvg } from "../../../../../public/icons";
 
 export default function LoginCard({
   children,

@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 
-import LoginLayout from "@/layouts/LoginLayout";
-
 import LoginForm from "./form";
 
 export const metadata: Metadata = {
@@ -10,9 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return (
-    <LoginLayout>
-      <LoginForm />
-    </LoginLayout>
-  );
+  return <LoginForm />;
 }

@@ -13,10 +13,10 @@ export interface NavItemProps {
 }
 
 const button = tv({
-  base: "transition rounded-md flex gap-4 items-center justify-center w-full cursor-pointer font-semibold h-fit px-[13px] py-2 border-none text-base shadow-none focus:shadow-[0_0_0_4px_#F1F2F4] outline-none",
+  base: "transition rounded-md flex gap-4 items-center justify-center w-full cursor-pointer font-semibold h-fit px-[13px] py-2 border-none text-base shadow-none focus:shadow-[0_0_0_4px_#F1F2F4] outline-none dark:text-secondary-700",
   variants: {
     isActive: {
-      true: "bg-disabled",
+      true: "bg-disabled dark:bg-active-dark dark:text-secondary-hover",
     },
   },
 });
