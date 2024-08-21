@@ -5,13 +5,13 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
-import LoginCard from "@/app/(login)/ui/LoginCard";
 import { FormPasswordInput } from "@/components/form/password-input";
 import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
 import LinkButton from "@/components/ui/button/link-button";
 import { SimpleText } from "@/components/ui/typography";
 
+import LoginCard from "../../login/ui/LoginCard";
 import { RegisterFormType, RegisterSchema } from "./registerValidation";
 
 export default function RegisterForm() {

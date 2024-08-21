@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 
-import LoginLayout from "@/layouts/LoginLayout";
-
+import LoginLayout from "../layout";
 import ForgotPasswordForm from "./form";
 
 export const metadata: Metadata = {
