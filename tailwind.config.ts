@@ -40,6 +40,11 @@ const config: Config = {
         "error-primary": "#D92D20",
         "fg-success-primary": "#079455",
         "secondary-hover": "#ECECED",
+        "brand-dark-noisy": "#FF4F180D",
+        "blue-dark-500": "#2970FF",
+        "utility-brand-700": "#C71E07",
+        "utility-brand-200": "#FFC8A8",
+        "utility-brand-50": "#FFF4ED",
       },
       boxShadow: {
         input: "0px 2px 2px 0px #E2E2EC33",
@@ -55,6 +60,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  plugins: [require("tailwindcss-react-aria-components")],
 };
 export default config;

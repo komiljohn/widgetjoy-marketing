@@ -19,8 +19,8 @@ const button = tv({
       secondary:
         "px-[13px] py-[9px] shadow-xs bg-white border-border-primary rounded-md text-button-secondary-fg text-sm hover:bg-disabled outline-none focus:shadow-[0_0_0_4px_#F1F2F4] disabled:border-border-secondary disabled:text-fg-disabled dark:border-border-dark-primary dark:bg-secondary-dark dark:text-secondary-700 dark:hover:bg-active-dark",
       destructive: "bg-red-700 hover:bg-red-800 pressed:bg-red-900 text-white hover:bg-disabled",
-      icon: "border-0 p-1 flex items-center justify-center text-gray-600 hover:bg-black/[5%] pressed:bg-black/10 dark:text-zinc-400 dark:hover:bg-white/10 dark:pressed:bg-white/20 disabled:bg-transparent",
-      link: "text-tertiary-600 border-none",
+      icon: "bg-brand-500 hover:bg-brand-600 border border-brand-600 p-[9px] pressed:bg-brand-800 text-white",
+      link: "text-tertiary-600 dark:text-secondary-700 border-none focus-visible:shadow-button-ring shadow-xs disabled:bg-bg-disabled disabled:text-fg-disabled disabled:border-border-secondary disabled:cursor-default outline-none",
     },
     isDisabled: {
       true: "bg-gray-100 dark:bg-zinc-800 text-gray-300 dark:text-zinc-600 forced-colors:text-[GrayText] border-black/5 dark:border-white/5",

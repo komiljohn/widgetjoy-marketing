@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 
 import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
+import Routes from "@/utils/routes";
 
 import LoginCard from "../../login/ui/LoginCard";
 import { ForgotPasswordFormType, ForgotPasswordSchema } from "./forgotPasswordValidation";
@@ -43,10 +44,10 @@ export default function ForgotPasswordForm() {
           <div className="space-y-4">
             <FormTextInput label="Email" placeholder="Enter email address" name="email" />
           </div>
-          <Button isLoading={isLoading} type="submit" className="mt-6">
+          <Button isLoading={isLoading} type="submit" className="mt-6 w-full">
             Send a link
           </Button>
-          <Button variant="secondary" className="mt-4" onPress={() => router.push("/login")}>
+          <Button variant="secondary" className="mt-4 w-full" onPress={() => router.push(Routes.login)}>
             Back to login
           </Button>
         </form>

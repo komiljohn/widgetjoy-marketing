@@ -12,6 +12,7 @@ import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
 import LinkButton from "@/components/ui/button/link-button";
 import { SimpleText } from "@/components/ui/typography";
+import Routes from "@/utils/routes";
 
 import LoginCard from "../ui/LoginCard";
 import { LoginFormType, LoginSchema } from "./loginValidation";
@@ -33,7 +34,7 @@ export default function LoginForm() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      router.push("/dashboard");
+      router.push(Routes.dashboard);
       toast.success("Successfully logged in", { duration: 2000 });
     }, 1000);
   };
@@ -47,17 +48,17 @@ export default function LoginForm() {
             <FormPasswordInput label="Password" placeholder="Enter password" name="password" />
             <div className="flex justify-between items-center">
               <FormCheckbox name="remember-me" label="Remember me" />
-              <LinkButton href="forgot-password">Forgot password</LinkButton>
+              <LinkButton href={Routes.forgot_password}>Forgot password</LinkButton>
             </div>
           </div>
-          <Button isLoading={isLoading} type="submit" className="mt-6">
+          <Button isLoading={isLoading} type="submit" className="mt-6 w-full">
             Login
           </Button>
           <div className="flex gap-3 justify-center mt-4">
-            <SimpleText className="text-sm dark:text-primary-dark-900" weight="font-medium">
+            <SimpleText className="text-sm" color="primary-900" weight="font-medium">
               Don't have an account?
             </SimpleText>
-            <LinkButton href="register">Register</LinkButton>
+            <LinkButton href={Routes.register}>Register</LinkButton>
           </div>
         </form>
       </FormProvider>

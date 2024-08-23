@@ -10,6 +10,7 @@ import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
 import LinkButton from "@/components/ui/button/link-button";
 import { SimpleText } from "@/components/ui/typography";
+import Routes from "@/utils/routes";
 
 import LoginCard from "../../login/ui/LoginCard";
 import { RegisterFormType, RegisterSchema } from "./registerValidation";
@@ -32,7 +33,7 @@ export default function RegisterForm() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      router.push("/login");
+      router.push(Routes.login);
     }, 1000);
   };
 
@@ -46,11 +47,11 @@ export default function RegisterForm() {
             <FormPasswordInput label="Password" placeholder="Enter your password" name="password" />
             <FormPasswordInput label="Confirm password" placeholder="Confirm your password" name="confirm_password" />
           </div>
-          <Button isLoading={isLoading} type="submit" className="mt-4">
+          <Button isLoading={isLoading} type="submit" className="mt-4 w-full">
             Register
           </Button>
           <div className="flex gap-3 justify-center mt-6">
-            <SimpleText className="text-sm dark:text-primary-dark-900" weight="font-medium">
+            <SimpleText className="text-sm" color="primary-900" weight="font-medium">
               Already have an account?
             </SimpleText>
             <LinkButton href="login">Login</LinkButton>
