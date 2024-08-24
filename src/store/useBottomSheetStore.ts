@@ -7,7 +7,7 @@ interface ModalStore {
   setActiveSheet: (a: Sheets | null) => void;
 }
 
-export const useBottomSheet = create<ModalStore>((set) => ({
+export const useBottomSheetStore = create<ModalStore>((set) => ({
   activeSheet: null,
   setActiveSheet: (data) => set({ activeSheet: data }),
 }));

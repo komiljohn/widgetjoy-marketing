@@ -25,7 +25,7 @@ export default function Dashboard() {
         >
           Add new widget
         </Button>
-        <Button className="md:hidden" variant="icon" onPress={() => router.push(Routes.dashboard_new)}>
+        <Button className="md:hidden" isIcon onPress={() => router.push(Routes.dashboard_new)}>
           <Plus size={20} />
         </Button>
       </div>

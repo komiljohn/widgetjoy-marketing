@@ -2,6 +2,11 @@ import * as v from "valibot";
 
 export const requiredStringField = (msg: string) => v.pipe(v.string(), v.trim(), v.nonEmpty(msg));
 
+export const requiredEmailField = v.pipe(
+  requiredStringField("Please enter your email address"),
+  v.email("Please enter valid email")
+);
+
 export const requiredPasswordField = v.pipe(
   requiredStringField("Please enter your password"),
   v.minLength(

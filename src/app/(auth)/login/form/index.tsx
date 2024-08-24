@@ -4,7 +4,6 @@ import { valibotResolver } from "@hookform/resolvers/valibot";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 
 import { FormCheckbox } from "@/components/form/checkbox";
 import { FormPasswordInput } from "@/components/form/password-input";
@@ -12,6 +11,7 @@ import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
 import LinkButton from "@/components/ui/button/link-button";
 import { SimpleText } from "@/components/ui/typography";
+import { toastQueue } from "@/providers/ToastProvider";
 import Routes from "@/utils/routes";
 
 import LoginCard from "../ui/LoginCard";
@@ -35,7 +35,7 @@ export default function LoginForm() {
     setTimeout(() => {
       setIsLoading(false);
       router.push(Routes.dashboard);
-      toast.success("Successfully logged in", { duration: 2000 });
+      toastQueue.add("Successfully logged in", { timeout: 2000 });
     }, 1000);
   };
 

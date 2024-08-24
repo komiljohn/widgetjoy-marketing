@@ -1,14 +1,15 @@
 "use client";
 
-import { Building2, LayoutGrid, Menu, Settings, Zap } from "lucide-react";
+import { Building2, LayoutGrid, Menu, Plus, Settings, Zap } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { Key } from "react-aria-components";
 
 import { Select } from "@/components/form/select";
 import { Button } from "@/components/ui/button";
-import { useBottomSheet } from "@/store/useBottomSheet";
+import { useBottomSheetStore } from "@/store/useBottomSheetStore";
 import { Sheets } from "@/utils/constants";
 import Routes from "@/utils/routes";
 
@@ -20,8 +21,12 @@ import { teamOptions } from "./fakeData";
 const MenuSheet = dynamic(() => import("./MenuSheet"), { ssr: false });
 
 export default function Header() {
-  const { setActiveSheet } = useBottomSheet();
+  const { setActiveSheet } = useBottomSheetStore();
   const [selectedKey, setSelectedKey] = useState<Key>("");
+
+  const pathname = usePathname();
+
+  const isSettingsPage = pathname.includes(Routes.settings);
 
   return (
     <>
@@ -50,7 +55,13 @@ export default function Header() {
             <Menu className="cursor-pointer" size={20} />
           </Button>
           <div className="flex items-center gap-4 max-lg:hidden">
-            <Button leftIcon={<Zap size={20} />}>Upgrade now</Button>
+            {isSettingsPage ? (
+              <Button variant="secondary" leftIcon={<Plus size={20} />}>
+                Add new widget
+              </Button>
+            ) : (
+              <Button leftIcon={<Zap size={20} />}>Upgrade now</Button>
+            )}
             <Select
               options={teamOptions}
               icon={<Building2 size={20} />}

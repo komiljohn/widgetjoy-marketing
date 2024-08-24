@@ -1871,6 +1871,20 @@
     "@react-types/shared" "^3.24.1"
     "@swc/helpers" "^0.5.0"
 
+"@react-aria/i18n@^3.12.2":
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/@react-aria/i18n/-/i18n-3.12.2.tgz#f1e63ddb5227bc1c8a17cd3475235851e428dd0b"
+  integrity sha512-PvEyC6JWylTpe8dQEWqQwV6GiA+pbTxHQd//BxtMSapRW3JT9obObAnb/nFhj3HthkUvqHyj0oO1bfeN+mtD8A==
+  dependencies:
+    "@internationalized/date" "^3.5.5"
+    "@internationalized/message" "^3.1.4"
+    "@internationalized/number" "^3.5.3"
+    "@internationalized/string" "^3.2.3"
+    "@react-aria/ssr" "^3.9.5"
+    "@react-aria/utils" "^3.25.2"
+    "@react-types/shared" "^3.24.1"
+    "@swc/helpers" "^0.5.0"
+
 "@react-aria/interactions@^3.22.1":
   version "3.22.1"
   resolved "https://registry.yarnpkg.com/@react-aria/interactions/-/interactions-3.22.1.tgz#f2219a100c886cee383da7be9ae05e9dd940d39a"
@@ -1878,6 +1892,16 @@
   dependencies:
     "@react-aria/ssr" "^3.9.5"
     "@react-aria/utils" "^3.25.1"
+    "@react-types/shared" "^3.24.1"
+    "@swc/helpers" "^0.5.0"
+
+"@react-aria/interactions@^3.22.2":
+  version "3.22.2"
+  resolved "https://registry.yarnpkg.com/@react-aria/interactions/-/interactions-3.22.2.tgz#88ab021326459513fb16cf752974471932ffb5d1"
+  integrity sha512-xE/77fRVSlqHp2sfkrMeNLrqf2amF/RyuAS6T5oDJemRSgYM3UoxTbWjucPhfnoW7r32pFPHHgz4lbdX8xqD/g==
+  dependencies:
+    "@react-aria/ssr" "^3.9.5"
+    "@react-aria/utils" "^3.25.2"
     "@react-types/shared" "^3.24.1"
     "@swc/helpers" "^0.5.0"
 
@@ -1889,6 +1913,16 @@
     "@react-aria/utils" "^3.25.1"
     "@react-types/shared" "^3.24.1"
     "@swc/helpers" "^0.5.0"
+
+"@react-aria/landmark@3.0.0-beta.15":
+  version "3.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@react-aria/landmark/-/landmark-3.0.0-beta.15.tgz#68a250887b539a51c22f9e14ec9a7bb84b907126"
+  integrity sha512-EEABy0IFzqoS7r11HoD2YwiGR5LFw4kWDFTFUFwJkRP5tHEzsrEgkKPSPJXScQr5m7tenV6j0/Zzl1+w1ki3lA==
+  dependencies:
+    "@react-aria/utils" "^3.25.2"
+    "@react-types/shared" "^3.24.1"
+    "@swc/helpers" "^0.5.0"
+    use-sync-external-store "^1.2.0"
 
 "@react-aria/link@^3.7.3":
   version "3.7.3"
@@ -2182,6 +2216,20 @@
     "@react-types/textfield" "^3.9.5"
     "@swc/helpers" "^0.5.0"
 
+"@react-aria/toast@^3.0.0-beta.15":
+  version "3.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@react-aria/toast/-/toast-3.0.0-beta.15.tgz#6e0f93a3c439d1d7b572d7988d9cf8d9d978e08d"
+  integrity sha512-bg6ZXq4B5JYVt3GXVlf075tQOakcfumbDLnUMaijez4BhacuxF01+IvBPzAVEsARVNXfELoXa7Frb2K54Wgvtw==
+  dependencies:
+    "@react-aria/i18n" "^3.12.2"
+    "@react-aria/interactions" "^3.22.2"
+    "@react-aria/landmark" "3.0.0-beta.15"
+    "@react-aria/utils" "^3.25.2"
+    "@react-stately/toast" "3.0.0-beta.5"
+    "@react-types/button" "^3.9.6"
+    "@react-types/shared" "^3.24.1"
+    "@swc/helpers" "^0.5.0"
+
 "@react-aria/toggle@^3.10.6":
   version "3.10.6"
   resolved "https://registry.yarnpkg.com/@react-aria/toggle/-/toggle-3.10.6.tgz#c0afba7bdf5263869b7169d97651b1ba746f84f9"
@@ -2240,6 +2288,17 @@
   dependencies:
     "@react-aria/ssr" "^3.9.5"
     "@react-stately/utils" "^3.10.2"
+    "@react-types/shared" "^3.24.1"
+    "@swc/helpers" "^0.5.0"
+    clsx "^2.0.0"
+
+"@react-aria/utils@^3.25.2":
+  version "3.25.2"
+  resolved "https://registry.yarnpkg.com/@react-aria/utils/-/utils-3.25.2.tgz#2cce329849617b2df6a34f0931abe431f60aaedc"
+  integrity sha512-GdIvG8GBJJZygB4L2QJP1Gabyn2mjFsha73I2wSe+o4DYeGWoJiMZRM06PyTIxLH4S7Sn7eVDtsSBfkc2VY/NA==
+  dependencies:
+    "@react-aria/ssr" "^3.9.5"
+    "@react-stately/utils" "^3.10.3"
     "@react-types/shared" "^3.24.1"
     "@swc/helpers" "^0.5.0"
     clsx "^2.0.0"
@@ -2515,6 +2574,14 @@
     "@react-types/tabs" "^3.3.9"
     "@swc/helpers" "^0.5.0"
 
+"@react-stately/toast@3.0.0-beta.5", "@react-stately/toast@^3.0.0-beta.5":
+  version "3.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@react-stately/toast/-/toast-3.0.0-beta.5.tgz#3463e0deeda22bcf3d3a9dd8edc13b45980522df"
+  integrity sha512-MEdQwcKsexlcJ4YQZ9cN5QSIqTlGGdgC5auzSKXXoq15DHuo4mtHfLzXPgcMDYOhOdmyphMto8Vt+21UL2FOrw==
+  dependencies:
+    "@swc/helpers" "^0.5.0"
+    use-sync-external-store "^1.2.0"
+
 "@react-stately/toggle@^3.7.6":
   version "3.7.6"
   resolved "https://registry.yarnpkg.com/@react-stately/toggle/-/toggle-3.7.6.tgz#de31d74b9f9bd73350cf99ba582bc3cd79fa8c74"
@@ -2548,6 +2615,13 @@
   version "3.10.2"
   resolved "https://registry.yarnpkg.com/@react-stately/utils/-/utils-3.10.2.tgz#09377f771592ff537c901aa64178cb3a004a916f"
   integrity sha512-fh6OTQtbeQC0ywp6LJuuKs6tKIgFvt/DlIZEcIpGho6/oZG229UnIk6TUekwxnDbumuYyan6D9EgUtEMmT8UIg==
+  dependencies:
+    "@swc/helpers" "^0.5.0"
+
+"@react-stately/utils@^3.10.3":
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/@react-stately/utils/-/utils-3.10.3.tgz#ed1bf00a8419750fc11ccba73350b97e30f3f707"
+  integrity sha512-moClv7MlVSHpbYtQIkm0Cx+on8Pgt1XqtPx6fy9rQFb2DNc9u1G3AUVnqA17buOkH1vLxAtX4MedlxMWyRCYYA==
   dependencies:
     "@swc/helpers" "^0.5.0"
 
@@ -6420,11 +6494,6 @@ globby@^14.0.1:
     slash "^5.1.0"
     unicorn-magic "^0.1.0"
 
-goober@^2.1.10:
-  version "2.1.14"
-  resolved "https://registry.yarnpkg.com/goober/-/goober-2.1.14.tgz#4a5c94fc34dc086a8e6035360ae1800005135acd"
-  integrity sha512-4UpC0NdGyAFqLNPnhCT2iHpza2q+RAY3GV85a/mRPdzyPQMsj0KmMMuetdIkzWRbJ+Hgau1EZztq8ImmiMGhsg==
-
 gopd@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gopd/-/gopd-1.0.1.tgz#29ff76de69dac7489b7c0918a5788e56477c332c"
@@ -8478,13 +8547,6 @@ react-hook-form@^7.52.2:
   version "7.52.2"
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.52.2.tgz#ff40f4776250b86ddfcde6be68d34aa82b1c60fe"
   integrity sha512-pqfPEbERnxxiNMPd0bzmt1tuaPcVccywFDpyk2uV5xCIBphHV5T8SVnX9/o3kplPE1zzKt77+YIoq+EMwJp56A==
-
-react-hot-toast@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/react-hot-toast/-/react-hot-toast-2.4.1.tgz#df04295eda8a7b12c4f968e54a61c8d36f4c0994"
-  integrity sha512-j8z+cQbWIM5LY37pR6uZR6D4LfseplqnuAO4co4u8917hBUvXlEqyP1ZzqVLcqoyUesZZv/ImreoCeHVDpE5pQ==
-  dependencies:
-    goober "^2.1.10"
 
 react-is@18.1.0:
   version "18.1.0"

@@ -4,10 +4,10 @@ import { valibotResolver } from "@hookform/resolvers/valibot";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 
 import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
+import { toastQueue } from "@/providers/ToastProvider";
 import Routes from "@/utils/routes";
 
 import LoginCard from "../../login/ui/LoginCard";
@@ -29,7 +29,7 @@ export default function ForgotPasswordForm() {
     setTimeout(() => {
       setIsLoading(false);
       router.push("/");
-      toast.success("The link for resetting your password is sent to your email", { duration: 3000 });
+      toastQueue.add("The link for resetting your password is sent to your email", { timeout: 2000 });
     }, 1000);
   };
 

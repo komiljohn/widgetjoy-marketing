@@ -45,6 +45,12 @@ const config: Config = {
         "utility-brand-700": "#C71E07",
         "utility-brand-200": "#FFC8A8",
         "utility-brand-50": "#FFF4ED",
+        "utility-orange-50": "#511C10",
+        "utility-orange-200": "#932F19",
+        "utility-orange-700": "#F7B27A",
+        "avatar-contrast-border": "#00000014",
+        "bg-overlay": "#0C111D",
+        "rounded-lines": "#E4E7EC",
       },
       boxShadow: {
         input: "0px 2px 2px 0px #E2E2EC33",

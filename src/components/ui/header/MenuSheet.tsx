@@ -2,7 +2,7 @@ import { LayoutGrid, LucideCircleUserRound, Plus, Settings, X } from "lucide-rea
 import Link from "next/link";
 import React from "react";
 
-import { useBottomSheet } from "@/store/useBottomSheet";
+import { useBottomSheetStore } from "@/store/useBottomSheetStore";
 import { Sheets } from "@/utils/constants";
 import Routes from "@/utils/routes";
 
@@ -12,7 +12,7 @@ import { Button } from "../button";
 import { SimpleText } from "../typography";
 
 export default function MenuSheet() {
-  const { activeSheet, setActiveSheet } = useBottomSheet();
+  const { activeSheet, setActiveSheet } = useBottomSheetStore();
 
   const isOpen = activeSheet === Sheets.menu;
   const closeHandler = () => setActiveSheet(null);

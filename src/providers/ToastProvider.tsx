@@ -1,37 +1,21 @@
 "use client";
 
-import { X } from "lucide-react";
-import React from "react";
-import toast, { ToastBar, Toaster } from "react-hot-toast";
+import { ToastQueue, useToastQueue } from "@react-stately/toast";
+import { createPortal } from "react-dom";
 
-import { SimpleText } from "@/components/ui/typography";
+import { MyToast } from "@/components/ui/toast/Toast";
+import ToastRegion from "@/components/ui/toast/ToastRegion";
 
-import { CheckCirclesSvg } from "../../public/icons";
+export const toastQueue = new ToastQueue<MyToast>({
+  maxVisibleToasts: 5,
+});
 
-export default function ToastProvider() {
-  return (
-    <Toaster>
-      {(t) => (
-        <ToastBar toast={t}>
-          {({ message }) => (
-            <div className="border-border-primary rounded-xl flex items-center gap-0.5 relative pr-11 min-w-[200px]">
-              <CheckCirclesSvg />
-              <div>
-                <SimpleText className="text-button-secondary-fg mb-3 font-semibold">{message}</SimpleText>
-              </div>
+type Props = object;
 
-              {t.type !== "loading" && (
-                <X
-                  onClick={() => toast.dismiss(t.id)}
-                  color="#98A2B3"
-                  size={20}
-                  className="absolute cursor-pointer top-2 right-1.5"
-                />
-              )}
-            </div>
-          )}
-        </ToastBar>
-      )}
-    </Toaster>
-  );
+export function GlobalToastRegion(props: Props) {
+  // Subscribe to it.
+  const state = useToastQueue<MyToast>(toastQueue);
+
+  // Render toast region.
+  return state.visibleToasts.length > 0 ? createPortal(<ToastRegion {...props} state={state} />, document.body) : null;
 }

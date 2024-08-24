@@ -11,7 +11,7 @@ interface ISimpleText {
   children: ReactNode;
 }
 
-type ColorTypes = "primary-900" | "quaternary-500";
+type ColorTypes = "primary-900" | "quaternary-500" | "tertiary-600" | "secondary-700";
 
 function getColorVariant(color: ColorTypes) {
   switch (color) {
@@ -19,6 +19,10 @@ function getColorVariant(color: ColorTypes) {
       return "text-primary-900 dark:text-primary-dark-900";
     case "quaternary-500":
       return "text-text-disabled dark:text-tertiary-dark-600";
+    case "tertiary-600":
+      return "text-tertiary-600 dark:text-tertiary-dark-600";
+    case "secondary-700":
+      return "text-button-secondary-fg dark:text-secondary-700";
   }
 }
 

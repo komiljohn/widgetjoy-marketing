@@ -2,11 +2,11 @@ import { valibotResolver } from "@hookform/resolvers/valibot";
 import type { Meta } from "@storybook/react";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import * as v from "valibot";
 
 import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
+import { toastQueue } from "@/providers/ToastProvider";
 import { requiredStringField } from "@/utils/validationFields";
 
 const meta: Meta<typeof FormTextInput> = {
@@ -40,7 +40,7 @@ export const Validation = (args: Props) => {
 
   const onSubmit = () => {
     methods.resetField("test_input");
-    toast.success("Updated");
+    toastQueue.add("Updated");
   };
 
   return (

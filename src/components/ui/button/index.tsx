@@ -5,9 +5,10 @@ import { tv } from "tailwind-variants";
 
 export interface ButtonProps extends RACButtonProps {
   isLoading?: boolean;
-  variant?: "primary" | "secondary" | "destructive" | "icon" | "link";
+  variant?: "primary" | "secondary" | "destructive" | "link";
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
+  isIcon?: boolean;
 }
 
 const button = tv({
@@ -19,8 +20,11 @@ const button = tv({
       secondary:
         "px-[13px] py-[9px] shadow-xs bg-white border-border-primary rounded-md text-button-secondary-fg text-sm hover:bg-disabled outline-none focus:shadow-[0_0_0_4px_#F1F2F4] disabled:border-border-secondary disabled:text-fg-disabled dark:border-border-dark-primary dark:bg-secondary-dark dark:text-secondary-700 dark:hover:bg-active-dark",
       destructive: "bg-red-700 hover:bg-red-800 pressed:bg-red-900 text-white hover:bg-disabled",
-      icon: "bg-brand-500 hover:bg-brand-600 border border-brand-600 p-[9px] pressed:bg-brand-800 text-white",
       link: "text-tertiary-600 dark:text-secondary-700 border-none focus-visible:shadow-button-ring shadow-xs disabled:bg-bg-disabled disabled:text-fg-disabled disabled:border-border-secondary disabled:cursor-default outline-none",
+    },
+    isIcon: {
+      true: "p-[9px]",
+      false: "",
     },
     isDisabled: {
       true: "bg-gray-100 dark:bg-zinc-800 text-gray-300 dark:text-zinc-600 forced-colors:text-[GrayText] border-black/5 dark:border-white/5",
@@ -28,6 +32,7 @@ const button = tv({
   },
   defaultVariants: {
     variant: "primary",
+    isIcon: false,
   },
 });
 
@@ -37,7 +42,7 @@ export function Button(props: ButtonProps) {
       {...props}
       isDisabled={props.isDisabled || props.isLoading}
       className={composeRenderProps(props.className, (className, renderProps) =>
-        button({ ...renderProps, variant: props.variant, className })
+        button({ ...renderProps, variant: props.variant, isIcon: props.isIcon, className })
       )}
     >
       {props.isLoading ? <Loader size={16} className="animate-spin" /> : props.leftIcon}
