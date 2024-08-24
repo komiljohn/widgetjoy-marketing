@@ -10,7 +10,7 @@ import { SimpleText } from "../typography";
 
 export interface MyToast {
   title: string;
-  description: string;
+  description?: string;
 }
 
 interface ToastProps {

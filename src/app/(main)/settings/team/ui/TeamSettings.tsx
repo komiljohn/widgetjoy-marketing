@@ -31,7 +31,7 @@ export default function TeamSettings() {
   const onSubmit = () => {
     setIsPending(true);
     setTimeout(() => {
-      toastQueue.add("Successfully updated");
+      toastQueue.add({ title: "Successfully updated" });
       setIsPending(false);
     }, 1500);
   };

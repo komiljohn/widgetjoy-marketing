@@ -1,13 +1,11 @@
 import React from "react";
 
-import TeamMembers from "./ui/TeamMembers";
-import TeamSettings from "./ui/TeamSettings";
+import ProfilePreferences from "./ui/ProfilePreferences";
 
 export default function Page() {
   return (
     <main className="pt-8 px-4 container mx-auto">
-      <TeamSettings />
-      <TeamMembers />
+      <ProfilePreferences />
     </main>
   );
 }
