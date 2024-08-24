@@ -70,9 +70,9 @@ export default function BottomSheet({ isOpen, setIsOpen, children }: Props) {
             transition={staticTransition}
             style={{
               y,
-              top: "50%",
+              // top: "0px",
               // Extra padding at the bottom to account for rubber band scrolling.
-              paddingBottom: window.screen.height,
+              // paddingBottom: window.screen.height,
             }}
             drag="y"
             dragConstraints={{ top: 0 }}
@@ -86,7 +86,7 @@ export default function BottomSheet({ isOpen, setIsOpen, children }: Props) {
           >
             {/* drag affordance */}
             {/* <div className="mx-auto w-12 mt-2 h-1.5 rounded-full bg-gray-400" /> */}
-            <Dialog className="outline-none bg-red-500">{children}</Dialog>
+            <Dialog className="outline-none bg-red-500 max-h-fit">{children}</Dialog>
           </MotionModal>
         </MotionModalOverlay>
       )}
