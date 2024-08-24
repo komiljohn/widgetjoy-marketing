@@ -14,7 +14,7 @@ export default function LoginCard({
   subtitle: string;
 }) {
   return (
-    <div className="bg-white dark:bg-bg-primary-dark rounded-2xl sm:px-8 py-8 px-[11px] login-shadow sm:w-[432px] mx-5">
+    <div className="bg-white dark:bg-bg-primary-dark rounded-2xl py-8 px-[11px] login-shadow sm:w-[432px]">
       <div className="text-center mb-8">
         <LogoIconSvg className="mx-auto mb-4" />
         <SimpleText color="primary-900" className="mb-2" weight="font-medium">
