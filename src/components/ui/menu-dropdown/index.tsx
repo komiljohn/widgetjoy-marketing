@@ -21,7 +21,7 @@ export default function MenuDropdown() {
         <Menu className="outline-none">
           <MenuItem
             onAction={() => {}}
-            className="px-3 py-2 flex items-center outline-none focus-within:shadow-button-ring rounded-md"
+            className="px-3 py-2 flex items-center outline-none focus-within:shadow-button-ring rounded-md cursor-pointer"
           >
             <LogOut size={20} color="red" />
             <SimpleText

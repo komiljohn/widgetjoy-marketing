@@ -56,9 +56,11 @@ export default function Header() {
           </Button>
           <div className="flex items-center gap-4 max-lg:hidden">
             {isSettingsPage ? (
-              <Button variant="secondary" leftIcon={<Plus size={20} />}>
-                Add new widget
-              </Button>
+              <Link href={Routes.dashboard_new}>
+                <Button variant="secondary" leftIcon={<Plus size={20} />}>
+                  Add new widget
+                </Button>
+              </Link>
             ) : (
               <Button leftIcon={<Zap size={20} />}>Upgrade now</Button>
             )}
