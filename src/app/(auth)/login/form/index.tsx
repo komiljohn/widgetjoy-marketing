@@ -35,7 +35,7 @@ export default function LoginForm() {
     setTimeout(() => {
       setIsLoading(false);
       router.push(Routes.dashboard);
-      toastQueue.add("Successfully logged in", { timeout: 2000 });
+      toastQueue.add({ title: "Successfully logged in" }, { timeout: 2000 });
     }, 1000);
   };
 

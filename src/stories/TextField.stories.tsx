@@ -40,7 +40,7 @@ export const Validation = (args: Props) => {
 
   const onSubmit = () => {
     methods.resetField("test_input");
-    toastQueue.add("Updated");
+    toastQueue.add({ title: "Updated" });
   };
 
   return (

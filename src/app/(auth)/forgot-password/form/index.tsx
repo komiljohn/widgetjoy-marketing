@@ -29,7 +29,7 @@ export default function ForgotPasswordForm() {
     setTimeout(() => {
       setIsLoading(false);
       router.push("/");
-      toastQueue.add("The link for resetting your password is sent to your email", { timeout: 2000 });
+      toastQueue.add({ title: "The link for resetting your password is sent to your email" }, { timeout: 2000 });
     }, 1000);
   };
 
