@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 
-import LoginLayout from "../layout";
 import RegisterForm from "./form";
 
 export const metadata: Metadata = {
@@ -9,9 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return (
-    <LoginLayout>
-      <RegisterForm />
-    </LoginLayout>
-  );
+  return <RegisterForm />;
 }

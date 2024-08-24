@@ -30,7 +30,7 @@ export function PasswordInput({ label, error, placeholder, isRequired, ...props 
   const [showPassword, setShowPassword] = useState(false);
 
   const styles =
-    "w-full border shadow-input rounded-lg py-[7px] pl-[11px] pr-9 outline-none focus:outline-offset-0 focus:outline-[4px] focus:outline-ring-error-shadow-xs focus:border-border-error placeholder:text-text-disabled text-primary-900 disabled:bg-disabled placeholder:text-sm dark:bg-bg-primary-dark dark:border-dark-primary dark:text-tertiary-dark-600 dark:border-border-dark-primary dark:focus:border-brand-600 error:border-border-error [data-invalid]:border-error-primary";
+    "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] pl-[11px] pr-9 outline-none focus:outline-offset-0 focus:outline-[4px] focus:outline-ring-error-shadow-xs focus:border-border-error placeholder:text-text-disabled text-primary-900 disabled:bg-disabled placeholder:text-base dark:bg-bg-primary-dark dark:border-dark-primary dark:text-tertiary-dark-600 dark:border-border-dark-primary dark:focus:border-brand-600 error:border-border-error [data-invalid]:border-error-primary";
 
   return (
     <TextField
