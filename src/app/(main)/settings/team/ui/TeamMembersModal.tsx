@@ -85,14 +85,16 @@ export default function TeamMembersModal() {
                   placeholder="you@untitledui.com"
                   className="mb-3 grow"
                 />
-                <Button variant="secondary" isIcon onPress={() => remove(idx)}>
-                  <Trash2 size={20} />
-                </Button>
+                {fields.length > 1 && (
+                  <Button variant="secondary" isIcon onPress={() => remove(idx)}>
+                    <Trash2 size={20} />
+                  </Button>
+                )}
               </div>
             ))}
             <Button
               variant="link"
-              className="shadow-none text-brand-500 dark:text-brand-500"
+              textColor="brand-500"
               leftIcon={<Plus size={20} />}
               onPress={() => append({ email: "" })}
             >

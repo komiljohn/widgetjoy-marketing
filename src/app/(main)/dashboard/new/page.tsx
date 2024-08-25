@@ -20,7 +20,8 @@ export default function Page() {
     <div className="container px-4 mx-auto pt-[54px] pb-[144px]">
       <section className="flex max-md:flex-col justify-between mb-6">
         <Button
-          className="md:hidden shadow-none w-fit mb-4"
+          textColor="text-disabled"
+          className="md:hidden w-fit mb-4"
           variant="link"
           leftIcon={<ArrowLeft size={20} />}
           onPress={() => router.push("/")}

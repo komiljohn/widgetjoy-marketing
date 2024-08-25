@@ -29,10 +29,10 @@ interface TextInputProps extends TextFieldProps {
   className?: string;
 }
 
-export function TextInput({ leftIcon, label, error, placeholder, type, isRequired, ...props }: TextInputProps) {
-  const styles =
-    "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] px-[11px] outline-none focus:outline-offset-0 focus:outline-[4px] focus:outline-ring-error-shadow-xs focus:border-border-brand placeholder:text-text-disabled placeholder:text-base text-base text-primary-900 disabled:bg-disabled dark:bg-bg-primary-dark dark:border-dark-primary dark:text-tertiary-dark-600 dark:border-border-dark-primary dark:focus:border-brand-600";
+export const textInputStyles =
+  "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] px-[11px] outline-none focus:outline-offset-0 focus:outline-[4px] focus:outline-ring-error-shadow-xs focus:border-border-brand placeholder:text-text-disabled placeholder:text-base text-base text-primary-900 disabled:bg-disabled dark:bg-bg-primary-dark dark:border-dark-primary dark:text-tertiary-dark-600 dark:border-border-dark-primary dark:focus:border-brand-600";
 
+export function TextInput({ leftIcon, label, error, placeholder, type, isRequired, ...props }: TextInputProps) {
   const clonedIcon = leftIcon
     ? cloneElement(leftIcon, { className: "absolute left-[13px] top-[calc(50%-10px)] text-text-disabled" })
     : null;
@@ -49,19 +49,19 @@ export function TextInput({ leftIcon, label, error, placeholder, type, isRequire
           <TextArea
             rows={4}
             placeholder={placeholder}
-            className={styles}
-            style={{ borderColor: error ? "#FDA29B" : "", paddingLeft: leftIcon ? "41px" : "11px" }}
+            className={twMerge(textInputStyles, error && "border-brand-600")}
+            style={{ paddingLeft: leftIcon ? "41px" : "11px" }}
           />
         ) : (
           <Input
             placeholder={placeholder}
-            className={styles}
-            style={{ borderColor: error ? "#FDA29B" : "", paddingLeft: leftIcon ? "41px" : "11px" }}
+            className={twMerge(textInputStyles, error && "border-brand-600")}
+            style={{ paddingLeft: leftIcon ? "41px" : "11px" }}
           />
         )}
         {clonedIcon}
       </div>
-      <FieldError className="text-error-primary text-sm">{error}</FieldError>
+      <FieldError className="text-brand-600 text-sm">{error}</FieldError>
     </TextField>
   );
 }

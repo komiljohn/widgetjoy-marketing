@@ -38,8 +38,8 @@ export default function TeamMembers() {
             </SimpleText>
             <Button
               variant="link"
+              textColor="brand-500"
               leftIcon={<Plus size={20} />}
-              className="text-brand-500 dark:text-brand-500 shadow-none text-sm"
               onPress={() => setActiveModal(Modals.team_member)}
             >
               Add new member

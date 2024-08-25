@@ -38,6 +38,13 @@ export const tableData: ITeamMember[] = [
     date: "28.04.2024",
     email: "mobie@gmail.com",
   },
+  {
+    id: 3,
+    name: "Dildora",
+    role: "UI/UX esigner",
+    date: "01.04.1999",
+    email: "mobie@gmail.com",
+  },
 ];
 
 export interface ITableColumn<T> {
@@ -78,7 +85,11 @@ export const tableColumns: ITableColumn<ITeamMember>[] = [
       row.isPending ? (
         <Badge color="brand">Pending</Badge>
       ) : (
-        <Button variant="link" className="shadow-none text-tertiary-dark-600" leftIcon={<Trash2Icon size={20} />}>
+        <Button
+          variant="link"
+          className="text-tertiary-600 hover:text-border-dark-primary dark:text-tertiary-dark-600"
+          leftIcon={<Trash2Icon size={20} />}
+        >
           Delete
         </Button>
       ),

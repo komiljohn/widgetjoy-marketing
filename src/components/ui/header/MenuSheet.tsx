@@ -23,12 +23,12 @@ export default function MenuSheet() {
         <div className="flex items-center justify-between mb-6">
           <div className="flex gap-6 items-center">
             <LucideCircleUserRound size={40} />
-            <Link href={Routes.dashboard}>
+            <Link href={Routes.dashboard} tabIndex={-1}>
               <Button variant="link">
                 <LayoutGrid className="text-text-disabled dark:text-tertiary-dark-600" />
               </Button>
             </Link>
-            <Link href={Routes.settings}>
+            <Link href={Routes.settings} tabIndex={-1}>
               <Button variant="link">
                 <Settings className="text-text-disabled dark:text-tertiary-dark-600" />
               </Button>
@@ -39,7 +39,11 @@ export default function MenuSheet() {
           </Button>
         </div>
         <div className="bg-bg-disabled dark:bg-bg-primary-dark rounded-xl p-2">
-          <div className="bg-white dark:bg-secondary-dark dark:border-border-dark-primary shadow-xs p-[15px] rounded-xl border border-border-secondary mb-2">
+          <div
+            role="button"
+            className="bg-white dark:bg-secondary-dark dark:border-border-dark-primary shadow-xs p-[15px] rounded-xl border border-border-secondary mb-2 dark:focus:shadow-[0_0_0_4px_#98A2B324] outline-none focus:shadow-button-ring"
+            tabIndex={1}
+          >
             <div className="mb-2 flex justify-between">
               <SimpleText color="primary-900" weight="font-semibold">
                 Jamik's Workspace
@@ -50,7 +54,11 @@ export default function MenuSheet() {
               8 active widgets
             </SimpleText>
           </div>
-          <div className="bg-white dark:bg-secondary-dark dark:border-border-dark-primary shadow-xs p-[15px] rounded-xl border border-border-secondary mb-2">
+          <div
+            role="button"
+            className="bg-white dark:bg-secondary-dark dark:border-border-dark-primary shadow-xs p-[15px] rounded-xl border border-border-secondary mb-2 dark:focus:shadow-[0_0_0_4px_#98A2B324] outline-none focus:shadow-button-ring"
+            tabIndex={1}
+          >
             <div className="mb-2 flex justify-between">
               <SimpleText color="primary-900" weight="font-semibold">
                 Adams's Workspace
@@ -61,7 +69,11 @@ export default function MenuSheet() {
               8 active widgets
             </SimpleText>
           </div>
-          <div className="bg-white dark:bg-secondary-dark dark:border-border-dark-primary shadow-xs p-[15px] rounded-xl border border-border-secondary mb-2">
+          <div
+            role="button"
+            className="bg-white dark:bg-secondary-dark dark:border-border-dark-primary shadow-xs p-[15px] rounded-xl border border-border-secondary mb-2 dark:focus:shadow-[0_0_0_4px_#98A2B324] outline-none focus:shadow-button-ring"
+            tabIndex={1}
+          >
             <div className="mb-2 flex justify-between">
               <SimpleText color="primary-900" weight="font-semibold">
                 Company Workspace

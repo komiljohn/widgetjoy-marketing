@@ -1,10 +1,11 @@
-import { Check, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import React, { ReactNode, useRef } from "react";
 import {
   Button,
   Key,
   ListBox,
   ListBoxItem,
+  ListBoxItemProps,
   Popover,
   Select as AriaSelect,
   SelectProps,
@@ -39,11 +40,12 @@ interface MySelectProps<T extends object> extends Omit<SelectProps<T>, "children
   label?: string;
   className?: string;
   error?: FieldErrorType;
-  selectedKey: Key;
+  selectedKey?: Key;
   onSelectionChange?: (key: Key) => void;
+  children: ReactNode;
 }
 
-export function Select<T extends object>({ options = [], ...props }: MySelectProps<T>) {
+export function Select<T extends object>({ options = [], children, ...props }: MySelectProps<T>) {
   const ref = useRef<HTMLButtonElement>(null);
 
   return (
@@ -51,10 +53,10 @@ export function Select<T extends object>({ options = [], ...props }: MySelectPro
       <Label isRequired={props.isRequired}>{props.label}</Label>
       <Button
         ref={ref}
-        className="flex items-center gap-2 py-[7px] px-[13px] border border-border-primary rounded-md text-text-disabled font-medium focus-within:shadow-button-ring outline-none focus-within:border-border-brand dark:border-border-dark-primary dark:focus-within:border-brand-600"
+        className="flex items-center gap-2 py-[7px] px-[13px] border border-border-primary rounded-md text-text-disabled font-medium focus:shadow-button-ring outline-none focus:border-border-brand dark:border-border-dark-primary dark:focus:border-brand-600 w-full justify-between"
       >
         {props.icon}
-        <SelectValue className="whitespace-nowrap" />
+        <SelectValue className="whitespace-nowrap flex gap-2" />
         <span aria-hidden="true">
           <ChevronDown size={20} />
         </span>
@@ -66,29 +68,30 @@ export function Select<T extends object>({ options = [], ...props }: MySelectPro
       >
         <ListBox className="outline-none space-y-1">
           {options.length ? (
-            options.map((item) => (
-              <ListBoxItem
-                key={item.id}
-                textValue={item.name}
-                id={item.id}
-                className={twMerge(
-                  "py-2.5 px-2 flex items-center justify-between outline-none focus-within:shadow-button-ring rounded-md",
-                  item.id === props.selectedKey && "bg-disabled dark:bg-secondary-dark"
-                )}
-              >
-                {({ isSelected }) => (
-                  <>
-                    {item.name}
-                    {isSelected && <Check size={20} className="text-brand-600" />}
-                  </>
-                )}
-              </ListBoxItem>
-            ))
+            children
           ) : (
-            <ListBoxItem>No item</ListBoxItem>
+            <ListBoxItem className="py-2.5 px-2 outline-none rounded-md">No item</ListBoxItem>
           )}
         </ListBox>
       </Popover>
     </AriaSelect>
+  );
+}
+
+interface IListBoxItem extends ListBoxItemProps {
+  className?: string;
+}
+
+export function MyListBoxItem({ className, ...props }: IListBoxItem) {
+  return (
+    <ListBoxItem
+      {...props}
+      className={twMerge(
+        "py-2.5 px-2 flex items-center justify-between outline-none focus:shadow-[0_0_0_4px_#98A2B324] rounded-md cursor-pointer",
+        className
+      )}
+    >
+      {props.children}
+    </ListBoxItem>
   );
 }

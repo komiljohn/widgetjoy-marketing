@@ -2,6 +2,7 @@ import { Eye, EyeOff } from "lucide-react";
 import React, { useState } from "react";
 import { FieldError, Input, Label, TextField, TextFieldProps } from "react-aria-components";
 import { Controller, useFormContext } from "react-hook-form";
+import { twMerge } from "tailwind-merge";
 
 interface FormPasswordInputProps extends PasswordInputProps {
   name: string;
@@ -24,6 +25,7 @@ interface PasswordInputProps extends TextFieldProps {
   description?: string;
   error?: string;
   placeholder?: string;
+  className?: string;
 }
 
 export function PasswordInput({ label, error, placeholder, isRequired, ...props }: PasswordInputProps) {
@@ -36,8 +38,8 @@ export function PasswordInput({ label, error, placeholder, isRequired, ...props 
     <TextField
       type={showPassword ? "text" : "password"}
       isInvalid={!!error}
-      className="flex flex-col gap-1.5"
       {...props}
+      className={twMerge("flex flex-col gap-1.5", props.className)}
     >
       {label && (
         <Label className="text-login-card-title font-medium text-sm dark:text-primary-dark-900">
@@ -45,7 +47,7 @@ export function PasswordInput({ label, error, placeholder, isRequired, ...props 
         </Label>
       )}
       <div className="relative flex">
-        <Input placeholder={placeholder} className={styles} style={{ borderColor: error ? "#FDA29B" : "" }} />
+        <Input placeholder={placeholder} className={twMerge(styles, error && "border-brand-600")} />
 
         {showPassword ? (
           <Eye size={16} className="absolute top-3 right-3 cursor-pointer" onClick={() => setShowPassword(false)} />

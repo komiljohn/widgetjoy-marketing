@@ -3,11 +3,15 @@ import React from "react";
 import { Button, Menu, MenuItem, MenuTrigger, Popover } from "react-aria-components";
 
 import { SimpleText } from "../typography";
+import Routes from "@/utils/routes";
+import { useRouter } from "next/navigation";
 
 export default function MenuDropdown() {
+  const router = useRouter();
+
   return (
     <MenuTrigger>
-      <Button aria-label="Menu" className="flex items-center outline-none focus-within:shadow-button-ring rounded-md">
+      <Button aria-label="Menu" className="flex items-center outline-none focus:shadow-button-ring rounded-md">
         <CircleUserRound size={40} />
         <SimpleText className="ml-3 mr-2 text-button-secondary-fg dark:text-secondary-700" weight="font-semibold">
           User
@@ -20,8 +24,8 @@ export default function MenuDropdown() {
       >
         <Menu className="outline-none">
           <MenuItem
-            onAction={() => {}}
-            className="px-3 py-2 flex items-center outline-none focus-within:shadow-button-ring rounded-md cursor-pointer"
+            onAction={() => router.push(Routes.login)}
+            className="px-3 py-2 flex items-center outline-none focus:shadow-[0_0_0_4px_#98A2B324] rounded-md cursor-pointer"
           >
             <LogOut size={20} color="red" />
             <SimpleText

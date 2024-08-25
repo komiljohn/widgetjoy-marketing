@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { Key } from "react-aria-components";
 
-import { Select } from "@/components/form/select";
+import { MyListBoxItem, Select } from "@/components/form/select";
 import { Button } from "@/components/ui/button";
 import { useBottomSheetStore } from "@/store/useBottomSheetStore";
 import { Sheets } from "@/utils/constants";
@@ -51,7 +51,12 @@ export default function Header() {
               </NavItem>
             </div>
           </div>
-          <Button className="lg:hidden" variant="link" onPress={() => setActiveSheet(Sheets.menu)}>
+          <Button
+            className="lg:hidden"
+            variant="link"
+            textColor="text-disabled"
+            onPress={() => setActiveSheet(Sheets.menu)}
+          >
             <Menu className="cursor-pointer" size={20} />
           </Button>
           <div className="flex items-center gap-4 max-lg:hidden">
@@ -69,7 +74,11 @@ export default function Header() {
               icon={<Building2 size={20} />}
               selectedKey={selectedKey}
               onSelectionChange={setSelectedKey}
-            />
+            >
+              {teamOptions.map((item) => (
+                <MyListBoxItem key={item.id}>{item.name}</MyListBoxItem>
+              ))}
+            </Select>
             <MenuDropdown />
           </div>
         </div>

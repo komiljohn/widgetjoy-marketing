@@ -37,17 +37,17 @@ const checkboxStyles = tv({
   variants: {
     isDisabled: {
       false: "text-gray-800 dark:text-zinc-200",
-      true: "text-gray-300 dark:text-zinc-600 forced-colors:text-[GrayText]",
+      true: "text-gray-300 dark:text-zinc-600",
     },
   },
 });
 
 const boxStyles = tv({
-  base: "size-4 flex-shrink-0 flex items-center justify-center border transition rounded-[4px] dark:bg-bg-primary-dark shadow-input dark:border-border-dark-primary dark:shadow-xs",
+  base: "size-4 flex-shrink-0 flex items-center justify-center border transition rounded-[4px] dark:bg-bg-primary-dark dark:border-border-dark-primary",
   variants: {
     isSelected: {
       false: "border border-border-primary bg-white",
-      true: "border-brand-600 bg-brand-600",
+      true: "border-brand-600 bg-brand-500 dark:bg-brand-500 dark:border-brand-600",
     },
     isInvalid: {
       true: "",
@@ -56,20 +56,21 @@ const boxStyles = tv({
       true: "bg-disabled",
     },
     isFocused: {
-      true: "shadow-[0_0_0_4px_rgb(241,242,244)]",
+      true: "shadow-[0_0_0_4px_rgb(241,242,244)] dark:shadow-[#F1F2F4]",
+      false: "shadow-input dark:shadow-xs",
     },
   },
   compoundVariants: [
     {
       isFocused: true,
       isSelected: true,
-      class: "shadow-[0_0_0_4px_rgb(255,213,200)]",
+      class: "shadow-[0_0_0_4px_rgb(255,213,200)] dark:shadow-[#98A2B324]",
     },
   ],
 });
 
 const iconStyles =
-  "w-4 h-4 text-white group-disabled:text-gray-400 dark:text-slate-900 dark:group-disabled:text-slate-600 forced-colors:text-[HighlightText]";
+  "w-4 h-4 text-white dark:text-white group-disabled:text-gray-400 dark:text-slate-900 dark:group-disabled:text-slate-600";
 
 interface Props extends CheckboxProps {
   name: string;
