@@ -55,7 +55,7 @@ export function PasswordInput({ label, error, placeholder, isRequired, ...props 
           <EyeOff size={16} className="absolute top-3 right-3 cursor-pointer" onClick={() => setShowPassword(true)} />
         )}
       </div>
-      <FieldError className="text-error-primary text-sm">{error}</FieldError>
+      <FieldError className="text-brand-600 text-sm">{error}</FieldError>
     </TextField>
   );
 }
