@@ -1,6 +1,7 @@
-import Table from "@/components/ui/table";
 import type { Meta } from "@storybook/react";
-import React, { useMemo, useState } from "react";
+import React from "react";
+
+import Table from "@/components/ui/table";
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -12,7 +13,7 @@ const meta: Meta<typeof Table> = {
 
 export default meta;
 
-let rows = [
+const rows = [
   { id: 1, name: "Games", date: "6/7/2020", type: "File folder" },
   { id: 2, name: "Program Files", date: "4/7/2021", type: "File folder" },
   { id: 3, name: "bootmgr", date: "11/20/2010", type: "System file" },
@@ -39,21 +40,7 @@ const columns = [
   },
 ];
 
-export const Example = (args: any) => {
-  let [sortDescriptor, setSortDescriptor] = useState({
-    column: "name",
-    direction: "ascending",
-  });
-
-  let items = useMemo(() => {
-    // @ts-ignore
-    let items = rows.slice().sort((a, b) => a[sortDescriptor.column].localeCompare(b[sortDescriptor.column]));
-    if (sortDescriptor.direction === "descending") {
-      items.reverse();
-    }
-    return items;
-  }, [sortDescriptor]);
-
+export const Example = () => {
   return <Table columns={columns} data={rows} />;
 };
 

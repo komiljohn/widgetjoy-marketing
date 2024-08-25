@@ -42,7 +42,7 @@ export default function MenuSheet() {
           <div
             role="button"
             className="bg-white dark:bg-secondary-dark dark:border-border-dark-primary shadow-xs p-[15px] rounded-xl border border-border-secondary mb-2 dark:focus:shadow-[0_0_0_4px_#98A2B324] outline-none focus:shadow-button-ring"
-            tabIndex={1}
+            tabIndex={0}
           >
             <div className="mb-2 flex justify-between">
               <SimpleText color="primary-900" weight="font-semibold">
@@ -57,7 +57,7 @@ export default function MenuSheet() {
           <div
             role="button"
             className="bg-white dark:bg-secondary-dark dark:border-border-dark-primary shadow-xs p-[15px] rounded-xl border border-border-secondary mb-2 dark:focus:shadow-[0_0_0_4px_#98A2B324] outline-none focus:shadow-button-ring"
-            tabIndex={1}
+            tabIndex={0}
           >
             <div className="mb-2 flex justify-between">
               <SimpleText color="primary-900" weight="font-semibold">
@@ -72,7 +72,7 @@ export default function MenuSheet() {
           <div
             role="button"
             className="bg-white dark:bg-secondary-dark dark:border-border-dark-primary shadow-xs p-[15px] rounded-xl border border-border-secondary mb-2 dark:focus:shadow-[0_0_0_4px_#98A2B324] outline-none focus:shadow-button-ring"
-            tabIndex={1}
+            tabIndex={0}
           >
             <div className="mb-2 flex justify-between">
               <SimpleText color="primary-900" weight="font-semibold">

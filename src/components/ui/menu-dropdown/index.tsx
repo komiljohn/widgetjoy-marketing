@@ -1,10 +1,11 @@
 import { ChevronDown, CircleUserRound, LogOut } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { Button, Menu, MenuItem, MenuTrigger, Popover } from "react-aria-components";
 
-import { SimpleText } from "../typography";
 import Routes from "@/utils/routes";
-import { useRouter } from "next/navigation";
+
+import { SimpleText } from "../typography";
 
 export default function MenuDropdown() {
   const router = useRouter();
