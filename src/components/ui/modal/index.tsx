@@ -42,7 +42,11 @@ export default function Modal({ isOpen, onClose, children, ...props }: Props) {
   return (
     <ModalOverlay isOpen={isOpen} onOpenChange={onClose} {...props} className={overlayStyles}>
       <AriaModal isDismissable {...props} className={modalStyles}>
-        <Button variant="link" onPress={onClose} className="shadow-none absolute top-6 right-6 z-10">
+        <Button
+          variant="link"
+          onPress={onClose}
+          className="shadow-none absolute top-6 right-6 z-10 hover:bg-secondary-light p-2.5"
+        >
           <X color="#98A2B3" />
         </Button>
         <Dialog aria-label={props.ariaLabel} className="outline-none">

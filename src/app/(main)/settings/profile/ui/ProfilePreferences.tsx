@@ -15,12 +15,12 @@ export default function ProfilePreferences() {
             Update general settings.
           </SimpleText>
         </div>
-        <div className="flex max-md:flex-col justify-between md:gap-8 gap-4 min-h-[140px]">
+        <div className="flex max-md:flex-col justify-between xl:gap-8 gap-4 sm:min-h-[140px]">
           <div className="max-w-[280px]">
             <SimpleText color="secondary-700" weight="font-semibold" className="text-sm">
               Appearance
             </SimpleText>
-            <SimpleText color="tertiary-600" className="text-sm mb-3">
+            <SimpleText color="tertiary-600" className="text-sm">
               Choose day / night mode or set it as system preference.
             </SimpleText>
           </div>

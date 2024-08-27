@@ -28,15 +28,27 @@ const meta: Meta<StoryProps> = {
 };
 export default meta;
 
-export const Primary = {
+export const Primary: StoryObj<StoryProps> = {
   args: {
     variant: "primary",
-    isDisabled: false,
   },
 };
 
 export const Secondary: StoryObj<StoryProps> = {
   args: {
     variant: "secondary",
+  },
+};
+
+export const Destructive: StoryObj<StoryProps> = {
+  args: {
+    variant: "destructive",
+  },
+};
+
+export const Link: StoryObj<StoryProps> = {
+  args: {
+    variant: "link",
+    textColor: "brand-500",
   },
 };

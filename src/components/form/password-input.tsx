@@ -1,5 +1,5 @@
 import { Eye, EyeOff } from "lucide-react";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FieldError, Input, Label, TextField, TextFieldProps } from "react-aria-components";
 import { Controller, useFormContext } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
@@ -30,9 +30,10 @@ interface PasswordInputProps extends TextFieldProps {
 
 export function PasswordInput({ label, error, placeholder, isRequired, ...props }: PasswordInputProps) {
   const [showPassword, setShowPassword] = useState(false);
+  const ref = useRef<HTMLInputElement>(null);
 
   const styles =
-    "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] pl-[11px] pr-9 outline-none focus:outline-offset-0 focus:outline-[4px] focus:outline-ring-error-shadow-xs focus:border-border-error placeholder:text-text-disabled text-primary-900 disabled:bg-disabled placeholder:text-base dark:bg-bg-primary-dark dark:border-dark-primary dark:text-tertiary-dark-600 dark:border-border-dark-primary dark:focus:border-brand-600 error:border-border-error [data-invalid]:border-error-primary";
+    "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] pl-[11px] pr-9 focus-ring placeholder:text-text-disabled text-primary-900 disabled:bg-disabled placeholder:text-base dark:bg-bg-primary-dark dark:border-dark-primary dark:text-tertiary-dark-600 dark:border-border-dark-primary error:border-border-error [data-invalid]:border-error-primary placeholder:select-none dark:focus:border-brand-600 focus:border-border-brand";
 
   return (
     <TextField
@@ -47,12 +48,30 @@ export function PasswordInput({ label, error, placeholder, isRequired, ...props 
         </Label>
       )}
       <div className="relative flex">
-        <Input placeholder={placeholder} className={twMerge(styles, error && "border-brand-600")} />
+        <Input
+          ref={ref}
+          placeholder={placeholder}
+          className={twMerge(styles, error && "border-brand-600 focus:border-brand-600")}
+        />
 
         {showPassword ? (
-          <Eye size={16} className="absolute top-3 right-3 cursor-pointer" onClick={() => setShowPassword(false)} />
+          <Eye
+            size={16}
+            className="absolute top-3 right-3 cursor-pointer"
+            onClick={() => {
+              setShowPassword(false);
+              ref.current?.focus();
+            }}
+          />
         ) : (
-          <EyeOff size={16} className="absolute top-3 right-3 cursor-pointer" onClick={() => setShowPassword(true)} />
+          <EyeOff
+            size={16}
+            className="absolute top-3 right-3 cursor-pointer"
+            onClick={() => {
+              setShowPassword(true);
+              ref.current?.focus();
+            }}
+          />
         )}
       </div>
       <FieldError className="text-brand-600 text-sm">{error}</FieldError>

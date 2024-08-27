@@ -1,6 +1,6 @@
 "use client";
 
-import { Building2, LayoutGrid, Menu, Plus, Settings, Zap } from "lucide-react";
+import { Building2, LayoutGrid, Menu, Plus, Settings, User, Zap } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,6 +16,7 @@ import Routes from "@/utils/routes";
 import { LogoSvg } from "../../../../public/icons";
 import MenuDropdown from "../menu-dropdown";
 import { NavItem } from "../nav-item";
+import { SimpleText } from "../typography";
 import { teamOptions } from "./fakeData";
 
 const MenuSheet = dynamic(() => import("./MenuSheet"), { ssr: false });
@@ -33,7 +34,7 @@ export default function Header() {
       <header className="border-b border-border-secondary dark:border-active-dark bg-white dark:bg-bg-primary-dark">
         <div className="container px-4 mx-auto py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/">
+            <Link href="/" className="focus-ring rounded-sm">
               <LogoSvg />
             </Link>
             <div className="flex gap-1 max-lg:hidden">
@@ -44,7 +45,7 @@ export default function Header() {
                 Dashboard
               </NavItem>
               <NavItem
-                href={Routes.settings}
+                href={Routes.settings_team}
                 leftIcon={<Settings className="text-text-disabled dark:text-tertiary-dark-600" size={20} />}
               >
                 Settings
@@ -61,7 +62,7 @@ export default function Header() {
           </Button>
           <div className="flex items-center gap-4 max-lg:hidden">
             {isSettingsPage ? (
-              <Link href={Routes.dashboard_new}>
+              <Link href={Routes.dashboard_new} tabIndex={-1}>
                 <Button variant="secondary" leftIcon={<Plus size={20} />}>
                   Add new widget
                 </Button>
@@ -71,12 +72,21 @@ export default function Header() {
             )}
             <Select
               options={teamOptions}
-              icon={<Building2 size={20} />}
+              icon={<Building2 size={20} className="min-w-5 dark:text-tertiary-dark-600 text-text-disabled" />}
               selectedKey={selectedKey}
               onSelectionChange={setSelectedKey}
+              className="w-[216px]"
             >
               {teamOptions.map((item) => (
-                <MyListBoxItem key={item.id}>{item.name}</MyListBoxItem>
+                <MyListBoxItem key={item.id} textValue={item.username} className="gap-2 flex justify-normal">
+                  <User size={20} className="min-w-5 dark:text-tertiary-dark-600 text-text-disabled" />
+                  <SimpleText color="primary-900" weight="font-medium" tag="span" className="truncate w-fit">
+                    {item.name}
+                  </SimpleText>
+                  <SimpleText color="tertiary-600" tag="span">
+                    {item.username}
+                  </SimpleText>
+                </MyListBoxItem>
               ))}
             </Select>
             <MenuDropdown />

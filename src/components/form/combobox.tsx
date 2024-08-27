@@ -21,6 +21,7 @@ interface MyComboBoxProps<T extends object> extends Omit<ComboBoxProps<T>, "chil
   label?: string;
   description?: string | null;
   error?: FieldErrorType;
+  placeholder: string;
   children: React.ReactNode | ((item: T) => React.ReactNode);
 }
 
@@ -38,7 +39,7 @@ export function FormComboBox<T extends object>({ name, label, children, ...props
           <div className={twMerge("relative", label && "mt-1")}>
             <Input className={textInputStyles} ref={ref} />
             <Button>
-              <ChevronDown size={20} className="absolute top-3 right-3" />
+              <ChevronDown size={20} className="absolute top-3 right-3 text-tertiary-dark-600" />
             </Button>
           </div>
           <FieldError>{error?.message}</FieldError>

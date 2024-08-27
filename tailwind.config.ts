@@ -52,9 +52,11 @@ const config: Config = {
         "bg-overlay": "#0C111D",
         "rounded-lines": "#E4E7EC",
         "bg-error-primary": "#FEF3F2",
+        "bg-error-dark-primary": "#f45b4d30",
         "button-primary-error-bg": "#D92D20",
         "button-primary-error-bg_hover": "#B42318",
         "fg-quinary": "#85888E",
+        ring: "#2970FFB2",
       },
       boxShadow: {
         input: "0px 2px 2px 0px #E2E2EC33",
@@ -71,6 +73,6 @@ const config: Config = {
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require("tailwindcss-react-aria-components")],
+  plugins: [require("tailwindcss-react-aria-components"), require("tailwindcss-animate")],
 };
 export default config;

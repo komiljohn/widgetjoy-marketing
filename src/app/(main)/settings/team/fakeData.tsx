@@ -87,7 +87,7 @@ export const tableColumns: ITableColumn<ITeamMember>[] = [
       ) : (
         <Button
           variant="link"
-          className="text-tertiary-600 hover:text-border-dark-primary dark:text-tertiary-dark-600"
+          className="text-tertiary-600 dark:hover:text-red-800 hover:text-red-500 dark:text-tertiary-dark-600"
           leftIcon={<Trash2Icon size={20} />}
         >
           Delete

@@ -58,8 +58,13 @@ export default function TeamSettings() {
               </SimpleText>
             </div>
             <div className="grow">
-              <FormTextInput label="Team owner" name="team_owner" className="mb-4" />
-              <FormTextInput label="Team name" name="team_name" />
+              <FormTextInput
+                label="Team owner"
+                name="team_owner"
+                placeholder="Enter team owner's name"
+                className="mb-4"
+              />
+              <FormTextInput label="Team name" name="team_name" placeholder="Enter team's name" />
             </div>
           </div>
           <div className="pt-5 flex justify-end">

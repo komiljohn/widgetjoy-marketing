@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 import React, { ReactNode, useRef } from "react";
 import {
   Button,
@@ -35,7 +35,7 @@ export function FormSelect({ name, ...props }: FormSelectProps) {
 }
 
 interface MySelectProps<T extends object> extends Omit<SelectProps<T>, "children"> {
-  options: { id: string; name: string }[];
+  options: { id: number; name: string }[];
   icon?: ReactNode;
   label?: string;
   className?: string;
@@ -53,17 +53,17 @@ export function Select<T extends object>({ options = [], children, ...props }: M
       <Label isRequired={props.isRequired}>{props.label}</Label>
       <Button
         ref={ref}
-        className="flex items-center gap-2 py-[7px] px-[13px] border border-border-primary rounded-md text-text-disabled font-medium focus:shadow-button-ring outline-none focus:border-border-brand dark:border-border-dark-primary dark:focus:border-brand-600 w-full justify-between"
+        className="flex items-center gap-2 py-[7px] px-[13px] border border-border-primary rounded-md text-text-disabled font-medium dark:border-border-dark-primary w-full justify-between focus-ring"
       >
-        {props.icon}
-        <SelectValue className="whitespace-nowrap flex gap-2" />
+        {!props.selectedKey && props.icon}
+        <SelectValue className="flex gap-2 truncate" />
         <span aria-hidden="true">
-          <ChevronDown size={20} />
+          <ChevronDown size={20} className="text-tertiary-dark-600" />
         </span>
       </Button>
       <FieldError>{props.error?.message}</FieldError>
       <Popover
-        className="bg-white dark:bg-active-dark dark:border-border-dark-primary outline-none border border-border-secondary rounded-md py-1.5 px-1.5 shadow-popup"
+        className="bg-white dark:bg-bg-primary-dark dark:border-border-dark-primary outline-none border border-border-secondary rounded-md py-1.5 px-1.5 shadow-popup entering:animate-in entering:fade-in exiting:animate-out exiting:fade-out"
         style={{ width: ref.current?.offsetWidth }}
       >
         <ListBox className="outline-none space-y-1">
@@ -86,12 +86,20 @@ export function MyListBoxItem({ className, ...props }: IListBoxItem) {
   return (
     <ListBoxItem
       {...props}
-      className={twMerge(
-        "py-2.5 px-2 flex items-center justify-between outline-none focus:shadow-[0_0_0_4px_#98A2B324] rounded-md cursor-pointer",
-        className
-      )}
+      className={({ isSelected }) =>
+        twMerge(
+          "py-2.5 px-2 flex items-center justify-between rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark outline-none whitespace-nowrap text-ellipsis",
+          isSelected && "",
+          className
+        )
+      }
     >
-      {props.children}
+      {({ isSelected }) => (
+        <>
+          <>{props.children}</>
+          {isSelected && <Check size={20} className="dark:text-tertiary-dark-600 text-text-disabled min-w-5" />}
+        </>
+      )}
     </ListBoxItem>
   );
 }

@@ -10,5 +10,5 @@ export function Label({ children, isRequired }: { children: ReactNode; isRequire
 }
 
 export function FieldError({ children }: { children: ReactNode }) {
-  return <AriaFieldError className="text-error-primary text-sm">{children}</AriaFieldError>;
+  return <AriaFieldError className="text-brand-600 text-sm">{children}</AriaFieldError>;
 }

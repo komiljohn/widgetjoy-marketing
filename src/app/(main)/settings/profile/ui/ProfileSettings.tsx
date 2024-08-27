@@ -29,7 +29,7 @@ export default function ProfileSettings() {
           <SimpleText color="secondary-700" weight="font-semibold" className="text-sm">
             Profile Information
           </SimpleText>
-          <SimpleText color="tertiary-600" className="text-sm mb-3">
+          <SimpleText color="tertiary-600" className="text-sm">
             Update your account's profile information and email address.
           </SimpleText>
         </div>
@@ -38,9 +38,15 @@ export default function ProfileSettings() {
             <div className="space-y-4">
               <FormTextInput name="full_name" label="Full name" placeholder="Enter your full name" />
               <FormTextInput name="email" label="Email" placeholder="Enter your email" />
-              <FormComboBox name="country" label="Country" menuTrigger="focus">
+              <FormComboBox
+                name="country"
+                label="Country"
+                placeholder="Select your country"
+                menuTrigger="manual"
+                defaultItems={countryOptions}
+              >
                 {countryOptions.map((item) => (
-                  <MyListBoxItem key={item.id} textValue={item.name} id={item.name.toLowerCase()} className="gap-2">
+                  <MyListBoxItem key={item.id} textValue={item.name} id={item.id} className="gap-2 justify-normal">
                     <Image src={item.url} width={24} height={24} alt="country flag" />
                     <SimpleText color="tertiary-600">{item.name}</SimpleText>
                   </MyListBoxItem>

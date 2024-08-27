@@ -13,7 +13,7 @@ interface Props<T> {
 export default function Table({ showIndexes = false, columns, data }: Props<any>) {
   const headColStyles =
     "bg-secondary-light dark:bg-bg-primary-dark py-3 px-[23px] text-xs leading-[18px] text-tertiary-600 dark:text-tertiary-dark-600 font-medium text-start";
-  const bodyColStyles = "py-[15px] px-[23px] text-sm text-tertiary-600";
+  const bodyColStyles = "py-[15px] px-[23px] text-sm text-tertiary-600 dark:text-tertiary-dark-600";
 
   return (
     <AriaTable

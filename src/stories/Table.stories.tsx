@@ -9,6 +9,11 @@ const meta: Meta<typeof Table> = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  argTypes: {
+    showIndexes: {
+      control: "boolean",
+    },
+  },
 };
 
 export default meta;
@@ -41,7 +46,7 @@ const columns = [
 ];
 
 export const Example = () => {
-  return <Table columns={columns} data={rows} />;
+  return <Table showIndexes columns={columns} data={rows} />;
 };
 
 Example.args = {

@@ -4,13 +4,13 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import * as v from "valibot";
 
-import { FormTextInput } from "@/components/form/text-input";
+import { FormPasswordInput } from "@/components/form/password-input";
 import { Button } from "@/components/ui/button";
 import { toastQueue } from "@/providers/ToastProvider";
-import { requiredStringField } from "@/utils/validationFields";
+import { requiredPasswordField } from "@/utils/validationFields";
 
-const meta: Meta<typeof FormTextInput> = {
-  component: FormTextInput,
+const meta: Meta<typeof FormPasswordInput> = {
+  component: FormPasswordInput,
   parameters: {
     layout: "centered",
   },
@@ -22,10 +22,10 @@ const meta: Meta<typeof FormTextInput> = {
 
 export default meta;
 
-type Props = typeof FormTextInput;
+type Props = typeof FormPasswordInput;
 
 const Schema = v.object({
-  test_input: requiredStringField("Required field"),
+  password: requiredPasswordField,
 });
 
 type SchemaFormType = v.InferOutput<typeof Schema>;
@@ -34,19 +34,19 @@ export const Validation = (args: Props) => {
   const methods = useForm<SchemaFormType>({
     resolver: valibotResolver(Schema),
     defaultValues: {
-      test_input: "",
+      password: "",
     },
   });
 
   const onSubmit = () => {
-    methods.resetField("test_input");
+    methods.resetField("password");
     toastQueue.add({ title: "Updated" });
   };
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <FormTextInput className="mb-2 w-[300px]" {...args} name="test_input" />
+        <FormPasswordInput className="mb-2 w-[300px]" {...args} name="password" />
         <Button type="submit" variant="primary">
           Submit
         </Button>
