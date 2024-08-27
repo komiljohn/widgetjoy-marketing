@@ -1,19 +1,12 @@
 import { ChevronDown } from "lucide-react";
-import React, { useRef } from "react";
-import {
-  Button,
-  ComboBox,
-  ComboBoxProps,
-  Input,
-  ListBox,
-  ListBoxItem,
-  ListBoxItemProps,
-  Popover,
-} from "react-aria-components";
+import React, { ReactNode, useRef } from "react";
+import { Button, ComboBox, ComboBoxProps, Input } from "react-aria-components";
 import { Controller, FieldError as FieldErrorType, useFormContext } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 
 import { FieldError, Label } from "./field";
+import MyListBox from "./list-box";
+import { MyPopover } from "./popover";
 import { textInputStyles } from "./text-input";
 
 interface MyComboBoxProps<T extends object> extends Omit<ComboBoxProps<T>, "children"> {
@@ -22,7 +15,7 @@ interface MyComboBoxProps<T extends object> extends Omit<ComboBoxProps<T>, "chil
   description?: string | null;
   error?: FieldErrorType;
   placeholder: string;
-  children: React.ReactNode | ((item: T) => React.ReactNode);
+  children: (item: T) => ReactNode;
 }
 
 export function FormComboBox<T extends object>({ name, label, children, ...props }: MyComboBoxProps<T>) {
@@ -43,24 +36,10 @@ export function FormComboBox<T extends object>({ name, label, children, ...props
             </Button>
           </div>
           <FieldError>{error?.message}</FieldError>
-          <Popover
-            className="bg-white dark:bg-active-dark dark:border-border-dark-primary outline-none border border-border-secondary rounded-md py-1.5 px-1.5 shadow-popup"
-            style={{ width: ref.current?.offsetWidth }}
-          >
-            <ListBox>{children}</ListBox>
-          </Popover>
+          <MyPopover width={ref.current?.offsetWidth}>
+            <MyListBox>{children}</MyListBox>
+          </MyPopover>
         </ComboBox>
-      )}
-    />
-  );
-}
-
-export function MyListBoxItem(props: ListBoxItemProps) {
-  return (
-    <ListBoxItem
-      {...props}
-      className={twMerge(
-        "py-2.5 px-2 flex items-center gap-2 outline-none focus-within:shadow-button-ring rounded-md cursor-pointer"
       )}
     />
   );

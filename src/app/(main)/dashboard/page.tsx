@@ -1,6 +1,7 @@
 "use client";
 
 import { Plus } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { Heading } from "react-aria-components";
@@ -18,16 +19,15 @@ export default function Dashboard() {
     <div className="container px-4 mx-auto pt-[54px] pb-12">
       <div className="flex items-center justify-between mb-6">
         <Heading className="text-2xl font-medium text-primary-900 dark:text-primary-dark-900">Dashboard</Heading>
-        <Button
-          className="max-md:hidden"
-          leftIcon={<Plus size={20} />}
-          onPress={() => router.push(Routes.dashboard_new)}
-        >
-          Add new widget
-        </Button>
-        <Button className="md:hidden" isIcon onPress={() => router.push(Routes.dashboard_new)}>
-          <Plus size={20} />
-        </Button>
+
+        <Link href={Routes.dashboard_new} tabIndex={-1}>
+          <Button className="max-md:hidden" leftIcon={<Plus size={20} />}>
+            Add new widget
+          </Button>
+          <Button className="md:hidden" isIcon onPress={() => router.push(Routes.dashboard_new)}>
+            <Plus size={20} />
+          </Button>
+        </Link>
       </div>
       <div>
         <SimpleText className="text-lg mb-[18px] text-tertiary-600 dark:text-tertiary-dark-600" weight="font-medium">

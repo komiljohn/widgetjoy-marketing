@@ -7,7 +7,8 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { Key } from "react-aria-components";
 
-import { MyListBoxItem, Select } from "@/components/form/select";
+import { MyListBoxItem } from "@/components/form/list-box";
+import { Select } from "@/components/form/select";
 import { Button } from "@/components/ui/button";
 import { useBottomSheetStore } from "@/store/useBottomSheetStore";
 import { Sheets } from "@/utils/constants";
@@ -71,7 +72,6 @@ export default function Header() {
               <Button leftIcon={<Zap size={20} />}>Upgrade now</Button>
             )}
             <Select
-              options={teamOptions}
               icon={<Building2 size={20} className="min-w-5 dark:text-tertiary-dark-600 text-text-disabled" />}
               selectedKey={selectedKey}
               onSelectionChange={setSelectedKey}

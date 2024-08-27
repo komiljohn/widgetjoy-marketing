@@ -81,7 +81,7 @@ export const tableColumns: ITableColumn<ITeamMember>[] = [
   {
     key: "actions",
     name: "",
-    render: (row: ITeamMember) =>
+    render: (row) =>
       row.isPending ? (
         <Badge color="brand">Pending</Badge>
       ) : (

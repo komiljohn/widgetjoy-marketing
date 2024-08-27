@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { Heading } from "react-aria-components";
@@ -19,15 +20,11 @@ export default function Page() {
   return (
     <div className="container px-4 mx-auto pt-[54px] pb-[144px]">
       <section className="flex max-md:flex-col justify-between mb-6">
-        <Button
-          textColor="text-disabled"
-          className="md:hidden w-fit mb-4"
-          variant="link"
-          leftIcon={<ArrowLeft size={20} />}
-          onPress={() => router.push("/")}
-        >
-          Back to dashboard
-        </Button>
+        <Link href="/" tabIndex={-1} className="md:hidden">
+          <Button textColor="text-disabled" className="w-fit mb-4" variant="link" leftIcon={<ArrowLeft size={20} />}>
+            Back to dashboard
+          </Button>
+        </Link>
         <div className="max-md:mb-4">
           <Heading className="text-2xl font-semibold text-primary-900 dark:text-primary-dark-900 mb-1">
             Create new widget
@@ -37,14 +34,11 @@ export default function Page() {
           </SimpleText>
         </div>
         <div className="flex gap-4">
-          <Button
-            className="max-md:hidden"
-            variant="secondary"
-            leftIcon={<ArrowLeft size={20} />}
-            onPress={() => router.push("/")}
-          >
-            Back to dashboard
-          </Button>
+          <Link href="/" tabIndex={-1} className="max-md:hidden">
+            <Button variant="secondary" leftIcon={<ArrowLeft size={20} />}>
+              Back to dashboard
+            </Button>
+          </Link>
           <Button className="max-sm:w-full" variant="secondary" onPress={() => router.push(Routes.dashboard_new)}>
             Submit request
           </Button>

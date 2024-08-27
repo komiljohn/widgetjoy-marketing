@@ -20,3 +20,26 @@ export const countryOptions = [
     url: "/icons/flags/az-flag.svg",
   },
 ];
+
+export const timeZones = [
+  {
+    id: 1,
+    name: "(GMT-10:00) Hawaii",
+  },
+  {
+    id: 2,
+    name: "(GMT-5:00) Central time",
+  },
+  {
+    id: 3,
+    name: "(GMT+0:00) Dublin, Edinburgh, Lisbon, London",
+  },
+  {
+    id: 4,
+    name: "(GMT+5:00) Islamabad, Karachi, Tashkent",
+  },
+  {
+    id: 5,
+    name: "(GMT+10:00) Yakutsk",
+  },
+];

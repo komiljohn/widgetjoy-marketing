@@ -9,7 +9,7 @@ import { FormCheckbox } from "@/components/form/checkbox";
 import { FormPasswordInput } from "@/components/form/password-input";
 import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
-import LinkButton from "@/components/ui/button/link-button";
+import MyLink from "@/components/ui/button/my-link";
 import { SimpleText } from "@/components/ui/typography";
 import { toastQueue } from "@/providers/ToastProvider";
 import Routes from "@/utils/routes";
@@ -48,7 +48,7 @@ export default function LoginForm() {
             <FormPasswordInput label="Password" placeholder="Enter password" name="password" />
             <div className="flex justify-between items-center">
               <FormCheckbox name="remember-me" label="Remember me" />
-              <LinkButton href={Routes.forgot_password}>Forgot password</LinkButton>
+              <MyLink href={Routes.forgot_password}>Forgot password</MyLink>
             </div>
           </div>
           <Button isLoading={isLoading} type="submit" className="mt-6 w-full">
@@ -58,7 +58,7 @@ export default function LoginForm() {
             <SimpleText className="text-sm" color="primary-900" weight="font-medium">
               Don't have an account?
             </SimpleText>
-            <LinkButton href={Routes.register}>Register</LinkButton>
+            <MyLink href={Routes.register}>Register</MyLink>
           </div>
         </form>
       </FormProvider>

@@ -19,10 +19,10 @@ const button = tv({
       primary:
         "text-sm bg-brand-500 hover:bg-brand-600 border border-brand-600 px-[13px] py-[9px] pressed:bg-brand-800 text-white shadow-xs disabled:bg-bg-disabled disabled:text-fg-disabled disabled:border-border-secondary disabled:cursor-default",
       secondary:
-        "px-[13px] py-[9px] shadow-xs bg-white border-border-primary rounded-md text-button-secondary-fg text-sm hover:bg-disabled disabled:border-border-secondary disabled:text-fg-disabled dark:border-border-dark-primary dark:bg-secondary-dark dark:text-secondary-700 dark:hover:bg-active-dark",
+        "px-[13px] py-[9px] shadow-xs bg-white border-border-primary rounded-md text-button-secondary-fg text-sm hover:bg-disabled disabled:border-border-secondary disabled:text-fg-disabled dark:border-border-dark-primary dark:bg-secondary-dark dark:text-secondary-700 dark:hover:bg-active-dark dark:disabled:border-border-dark-primary",
       destructive:
         "text-sm bg-button-primary-error-bg hover:bg-button-primary-error-bg_hover px-3.5 py-2.5 pressed:bg-button-primary-error-bg_hover text-white shadow-xs disabled:bg-bg-disabled disabled:text-fg-disabled disabled:cursor-default border-none",
-      link: "border-none disabled:text-fg-disabled disabled:cursor-default text-sm",
+      link: "border-none disabled:text-fg-disabled disabled:cursor-default text-sm font-normal",
     },
     isIcon: {
       true: "p-[9px]",
@@ -33,7 +33,7 @@ const button = tv({
       "brand-500": "text-brand-500 dark:text-brand-500 hover:text-brand-600",
     },
     isDisabled: {
-      true: "bg-gray-100 dark:bg-zinc-800 text-gray-300 dark:text-zinc-600 forced-colors:text-[GrayText] border-black/5 dark:border-white/5",
+      true: "",
     },
   },
   defaultVariants: {

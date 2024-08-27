@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import ProgressBarProvider from "@/providers/ProgressBarProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { GlobalToastRegion } from "@/providers/ToastProvider";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <GlobalToastRegion />
+          <ProgressBarProvider />
           {children}
         </ThemeProvider>
       </body>

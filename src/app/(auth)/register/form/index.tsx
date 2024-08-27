@@ -8,7 +8,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { FormPasswordInput } from "@/components/form/password-input";
 import { FormTextInput } from "@/components/form/text-input";
 import { Button } from "@/components/ui/button";
-import LinkButton from "@/components/ui/button/link-button";
+import MyLink from "@/components/ui/button/my-link";
 import { SimpleText } from "@/components/ui/typography";
 import Routes from "@/utils/routes";
 
@@ -54,7 +54,7 @@ export default function RegisterForm() {
             <SimpleText className="text-sm" color="primary-900" weight="font-medium">
               Already have an account?
             </SimpleText>
-            <LinkButton href="login">Login</LinkButton>
+            <MyLink href={Routes.login}>Login</MyLink>
           </div>
         </form>
       </FormProvider>
