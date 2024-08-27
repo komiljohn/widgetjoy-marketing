@@ -33,7 +33,7 @@ const button = tv({
       "brand-500": "text-brand-500 dark:text-brand-500 hover:text-brand-600",
     },
     isDisabled: {
-      true: "",
+      true: "cursor-default",
     },
   },
   defaultVariants: {

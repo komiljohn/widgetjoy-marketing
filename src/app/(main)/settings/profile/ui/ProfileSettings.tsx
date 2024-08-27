@@ -64,7 +64,7 @@ export default function ProfileSettings() {
                 <FormTextInput name="email" label="Email" placeholder="Enter your email" />
                 <FormComboBox
                   name="country"
-                  label="Country"
+                  label="County"
                   placeholder="Select your country"
                   defaultItems={countryOptions}
                 >

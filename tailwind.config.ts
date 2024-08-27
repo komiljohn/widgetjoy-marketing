@@ -52,7 +52,7 @@ const config: Config = {
         "bg-overlay": "#0C111D",
         "rounded-lines": "#E4E7EC",
         "bg-error-primary": "#FEF3F2",
-        "bg-error-dark-primary": "#f45b4d30",
+        "bg-error-dark-primary": "#F044381A",
         "button-primary-error-bg": "#D92D20",
         "button-primary-error-bg_hover": "#B42318",
         "fg-quinary": "#85888E",

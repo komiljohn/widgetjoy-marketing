@@ -1,0 +1,8 @@
+@import "@react-aria/example-theme";
+
+.react-aria-Popover[data-trigger="ComboBox"] {
+  min-width: var(--trigger-width);
+}
+.react-aria-Popover[data-trigger="Select"] {
+  min-width: var(--trigger-width);
+}

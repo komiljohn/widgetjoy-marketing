@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import React, { ReactNode, useRef } from "react";
+import React, { ReactNode } from "react";
 import { Button, Key, Select as AriaSelect, SelectProps, SelectValue } from "react-aria-components";
 import { Controller, FieldError as FieldErrorType, useFormContext } from "react-hook-form";
 
@@ -36,15 +36,10 @@ interface MySelectProps<T extends object> extends Omit<SelectProps<T>, "children
 }
 
 export function Select<T extends object>({ children, ...props }: MySelectProps<T>) {
-  const ref = useRef<HTMLButtonElement>(null);
-
   return (
     <AriaSelect isInvalid={!!props.error} {...props}>
       <Label isRequired={props.isRequired}>{props.label}</Label>
-      <Button
-        ref={ref}
-        className="flex items-center gap-2 py-[7px] px-[13px] border border-border-primary rounded-md text-text-disabled font-medium dark:border-border-dark-primary w-full justify-between focus-ring"
-      >
+      <Button className="flex items-center gap-2 py-[7px] px-[13px] border border-border-primary rounded-md text-text-disabled font-medium dark:border-border-dark-primary w-full justify-between focus-ring">
         {!props.selectedKey && props.icon}
         <SelectValue className="flex gap-2 truncate" />
         <span aria-hidden="true">
@@ -52,7 +47,7 @@ export function Select<T extends object>({ children, ...props }: MySelectProps<T
         </span>
       </Button>
       <FieldError>{props.error?.message}</FieldError>
-      <MyPopover width={ref.current?.offsetWidth}>
+      <MyPopover>
         <MyListBox>{children}</MyListBox>
       </MyPopover>
     </AriaSelect>

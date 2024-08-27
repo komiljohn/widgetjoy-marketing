@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import React, { ReactNode, useRef } from "react";
+import React, { ReactNode } from "react";
 import { Button, ComboBox, ComboBoxProps, Input } from "react-aria-components";
 import { Controller, FieldError as FieldErrorType, useFormContext } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
@@ -19,7 +19,6 @@ interface MyComboBoxProps<T extends object> extends Omit<ComboBoxProps<T>, "chil
 }
 
 export function FormComboBox<T extends object>({ name, label, children, ...props }: MyComboBoxProps<T>) {
-  const ref = useRef<HTMLInputElement>(null);
   const { control } = useFormContext();
 
   return (
@@ -30,13 +29,13 @@ export function FormComboBox<T extends object>({ name, label, children, ...props
         <ComboBox {...props} selectedKey={field.value} onSelectionChange={field.onChange} menuTrigger="focus">
           <Label>{label}</Label>
           <div className={twMerge("relative", label && "mt-1")}>
-            <Input className={textInputStyles} ref={ref} />
+            <Input className={textInputStyles} />
             <Button>
               <ChevronDown size={20} className="absolute top-3 right-3 text-tertiary-dark-600" />
             </Button>
           </div>
           <FieldError>{error?.message}</FieldError>
-          <MyPopover width={ref.current?.offsetWidth}>
+          <MyPopover>
             <MyListBox>{children}</MyListBox>
           </MyPopover>
         </ComboBox>
