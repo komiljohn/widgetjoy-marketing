@@ -45,7 +45,7 @@ export default function Modal({ isOpen, onClose, children, ...props }: Props) {
         <Button
           variant="link"
           onPress={onClose}
-          className="shadow-none absolute top-6 right-6 z-10 hover:bg-secondary-light p-2.5"
+          className="shadow-none absolute top-6 right-6 z-10 hover:bg-secondary-light p-2.5 dark:hover:bg-secondary-dark"
         >
           <X color="#98A2B3" />
         </Button>
