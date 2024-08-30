@@ -1,7 +1,10 @@
 import { Building2, Check, ChevronDown, Plus, Settings2 } from "lucide-react";
+import Link from "next/link";
 import React, { useState } from "react";
 import { Button, Header, Menu, MenuItem, MenuTrigger, Popover, Section } from "react-aria-components";
 import { twMerge } from "tailwind-merge";
+
+import Routes from "@/utils/routes";
 
 import { SimpleText } from "../../typography";
 import { workspaces } from "../fakeData";
@@ -43,17 +46,21 @@ export default function WorkspaceDropdown() {
                 Manage Team
               </SimpleText>
             </Header>
-            <MenuItem className="flex items-center gap-2 p-4 outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark mb-1">
-              <Settings2 className="text-text-secondary dark:text-white" />
-              <SimpleText tag="span" color="primary-900" weight="font-semibold">
-                Manage Team
-              </SimpleText>
+            <MenuItem className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark mb-1">
+              <Link href={Routes.settings_team} className="flex items-center gap-2 p-4">
+                <Settings2 className="text-text-secondary dark:text-white" />
+                <SimpleText tag="span" color="primary-900" weight="font-semibold">
+                  Manage Team
+                </SimpleText>
+              </Link>
             </MenuItem>
-            <MenuItem className="flex items-center gap-2 p-4 outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark">
-              <Plus className="text-text-secondary dark:text-white" />
-              <SimpleText tag="span" color="primary-900" weight="font-semibold">
-                Create new Team
-              </SimpleText>
+            <MenuItem className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark">
+              <Link href={`${Routes.settings_team}?invite-modal=true`} className="flex items-center gap-2 p-4">
+                <Plus className="text-text-secondary dark:text-white" />
+                <SimpleText tag="span" color="primary-900" weight="font-semibold">
+                  Create new Team
+                </SimpleText>
+              </Link>
             </MenuItem>
           </Section>
           <Section className="pt-1">

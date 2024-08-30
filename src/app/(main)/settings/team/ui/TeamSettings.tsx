@@ -20,6 +20,7 @@ export type TeamMemberFormType = v.InferOutput<typeof TeamMemberSchema>;
 
 export default function TeamSettings() {
   const [isPending, setIsPending] = useState(false);
+
   const methods = useForm<TeamMemberFormType>({
     defaultValues: {
       team_owner: "",

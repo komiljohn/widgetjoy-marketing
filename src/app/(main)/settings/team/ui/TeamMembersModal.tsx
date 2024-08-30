@@ -1,5 +1,6 @@
 import { valibotResolver } from "@hookform/resolvers/valibot";
 import { Mail, Plus, Trash2, UserPlus2 } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { FormProvider, useFieldArray, useForm } from "react-hook-form";
 import * as v from "valibot";
@@ -11,6 +12,7 @@ import { SimpleText } from "@/components/ui/typography";
 import { toastQueue } from "@/providers/ToastProvider";
 import { useModalStore } from "@/store/useModalStore";
 import { Modals } from "@/utils/constants";
+import Routes from "@/utils/routes";
 import { requiredEmailField } from "@/utils/validationFields";
 
 import { RoundedLinesSvg } from "../../../../../../public/icons";
@@ -28,6 +30,8 @@ export type EmailFormType = v.InferOutput<typeof EmailSchema>;
 export default function TeamMembersModal() {
   const { activeModal, closeModal } = useModalStore();
   const [isPending, setIsPending] = useState(false);
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
   const isOpen = activeModal === Modals.team_member;
 
@@ -41,11 +45,18 @@ export default function TeamMembersModal() {
     name: "emails",
   });
 
+  const closeHandler = () => {
+    if (searchParams.get("invite-modal")) {
+      router.replace(Routes.settings_team, undefined);
+    }
+    closeModal();
+  };
+
   const onSubmit = () => {
     setIsPending(true);
 
     setTimeout(() => {
-      closeModal();
+      closeHandler();
       setIsPending(false);
       toastQueue.add(
         {
@@ -59,7 +70,7 @@ export default function TeamMembersModal() {
   };
 
   return (
-    <Modal ariaLabel="Invite team members" isOpen={isOpen} onClose={closeModal} className="overflow-hidden relative">
+    <Modal ariaLabel="Invite team members" isOpen={isOpen} onClose={closeHandler} className="overflow-hidden relative">
       <div className="p-6 relative z-0">
         <div className="size-12 border border-border-secondary dark:border-border-dark-primary flex items-center justify-center rounded-lg mb-4">
           <UserPlus2 className="text-button-secondary-fg dark:text-secondary-700" />
@@ -101,7 +112,7 @@ export default function TeamMembersModal() {
               Add another
             </Button>
             <div className="flex gap-3 mt-8">
-              <Button className="w-1/2" variant="secondary" onPress={closeModal}>
+              <Button className="w-1/2" variant="secondary" onPress={closeHandler}>
                 Cancel
               </Button>
               <Button isLoading={isPending} className="w-1/2" type="submit">

@@ -2,7 +2,8 @@
 
 import { Plus } from "lucide-react";
 import dynamic from "next/dynamic";
-import React from "react";
+import { useSearchParams } from "next/navigation";
+import React, { useEffect } from "react";
 
 import { Button } from "@/components/ui/button";
 import Table from "@/components/ui/table";
@@ -15,7 +16,12 @@ import { tableColumns, tableData } from "../fakeData";
 const TeamMembersModal = dynamic(() => import("./TeamMembersModal"));
 
 export default function TeamMembers() {
+  const searchParams = useSearchParams();
   const { setActiveModal } = useModalStore();
+
+  useEffect(() => {
+    if (searchParams.get("invite-modal")) setActiveModal(Modals.team_member);
+  }, [searchParams]);
 
   return (
     <>
