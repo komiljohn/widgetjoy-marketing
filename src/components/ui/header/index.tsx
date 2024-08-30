@@ -15,10 +15,10 @@ import { Sheets } from "@/utils/constants";
 import Routes from "@/utils/routes";
 
 import { LogoSvg } from "../../../../public/icons";
-import MenuDropdown from "../menu-dropdown";
 import { NavItem } from "../nav-item";
 import { SimpleText } from "../typography";
 import { teamOptions } from "./fakeData";
+import UserMenuDropdown from "./user-menu-dropdown";
 
 const MenuSheet = dynamic(() => import("./MenuSheet"), { ssr: false });
 
@@ -89,7 +89,7 @@ export default function Header() {
                 </MyListBoxItem>
               ))}
             </Select>
-            <MenuDropdown />
+            <UserMenuDropdown />
           </div>
         </div>
       </header>
