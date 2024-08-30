@@ -1,14 +1,10 @@
 "use client";
 
-import { Building2, LayoutGrid, Menu, Plus, Settings, User, Zap } from "lucide-react";
+import { LayoutGrid, Menu, Plus, Settings, Zap } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
-import { Key } from "react-aria-components";
 
-import { MyListBoxItem } from "@/components/form/list-box";
-import { Select } from "@/components/form/select";
 import { Button } from "@/components/ui/button";
 import { useBottomSheetStore } from "@/store/useBottomSheetStore";
 import { Sheets } from "@/utils/constants";
@@ -16,15 +12,13 @@ import Routes from "@/utils/routes";
 
 import { LogoSvg } from "../../../../public/icons";
 import { NavItem } from "../nav-item";
-import { SimpleText } from "../typography";
-import { teamOptions } from "./fakeData";
 import UserMenuDropdown from "./user-menu-dropdown";
+import WorkspaceDropdown from "./workspace-dropdown";
 
 const MenuSheet = dynamic(() => import("./MenuSheet"), { ssr: false });
 
 export default function Header() {
   const { setActiveSheet } = useBottomSheetStore();
-  const [selectedKey, setSelectedKey] = useState<Key>("");
 
   const pathname = usePathname();
 
@@ -71,24 +65,7 @@ export default function Header() {
             ) : (
               <Button leftIcon={<Zap size={20} />}>Upgrade now</Button>
             )}
-            <Select
-              icon={<Building2 size={20} className="min-w-5 dark:text-tertiary-dark-600 text-text-disabled" />}
-              selectedKey={selectedKey}
-              onSelectionChange={setSelectedKey}
-              className="w-[216px]"
-            >
-              {teamOptions.map((item) => (
-                <MyListBoxItem key={item.id} textValue={item.username} className="gap-2 flex justify-normal">
-                  <User size={20} className="min-w-5 dark:text-tertiary-dark-600 text-text-disabled" />
-                  <SimpleText color="primary-900" weight="font-medium" tag="span" className="truncate w-fit">
-                    {item.name}
-                  </SimpleText>
-                  <SimpleText color="tertiary-600" tag="span">
-                    {item.username}
-                  </SimpleText>
-                </MyListBoxItem>
-              ))}
-            </Select>
+            <WorkspaceDropdown />
             <UserMenuDropdown />
           </div>
         </div>

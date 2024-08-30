@@ -12,7 +12,7 @@ import Badge from "../badge";
 import BottomSheet from "../bottom-sheet";
 import { Button } from "../button";
 import { SimpleText } from "../typography";
-import { teamOptions } from "./fakeData";
+import { workspaces } from "./fakeData";
 
 export default function MenuSheet() {
   const { activeSheet, setActiveSheet } = useBottomSheetStore();
@@ -43,7 +43,7 @@ export default function MenuSheet() {
           </Button>
         </div>
         <div className="bg-bg-disabled dark:bg-bg-primary-dark rounded-xl p-2">
-          {teamOptions.map((item) => (
+          {workspaces.map((item) => (
             <div
               key={item.id}
               role="button"

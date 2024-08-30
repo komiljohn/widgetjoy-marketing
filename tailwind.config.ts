@@ -23,6 +23,7 @@ const config: Config = {
         "border-primary": "#D0D5DD",
         "brand-500": "#FF4F18",
         "brand-600": "#F02E06",
+        "text-secondary": "#344051",
         "secondary-light": "#F9F9F9",
         "secondary-dark": "#161B26",
         "secondary-700": "#CECFD2",

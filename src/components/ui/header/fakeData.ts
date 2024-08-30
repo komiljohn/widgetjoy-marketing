@@ -1,20 +1,14 @@
-export const teamOptions = [
+export const workspaces = [
   {
     id: 1,
-    name: "Phoenix Frankenstein",
-    username: "@frankenstein",
+    name: "Jamik's Team",
+    username: "@jamik",
     isPro: false,
   },
   {
     id: 2,
-    name: "Olivia Rhye",
-    username: "@olivia",
-    isPro: true,
-  },
-  {
-    id: 3,
-    name: "Lana Steiner",
-    username: "@lana",
+    name: "Samurai Team",
+    username: "@samurai",
     isPro: true,
   },
 ];

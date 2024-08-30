@@ -30,24 +30,16 @@ export default function UserMenuDropdown() {
           </Header>
           <MenuItem className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark mb-1">
             <Link href={Routes.settings_profile} className="flex items-center gap-2 p-4">
-              <User2 />
-              <SimpleText
-                tag="span"
-                className="mr-2 text-button-secondary-fg dark:text-primary-dark-900"
-                weight="font-semibold"
-              >
+              <User2 className="text-text-secondary dark:text-white" />
+              <SimpleText tag="span" color="primary-900" className="mr-2" weight="font-semibold">
                 Profile
               </SimpleText>
             </Link>
           </MenuItem>
           <MenuItem className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark">
             <Link href={Routes.settings_profile} className="flex items-center gap-2 p-4">
-              <LogOut />
-              <SimpleText
-                tag="span"
-                className="mr-2 text-button-secondary-fg dark:text-primary-dark-900"
-                weight="font-semibold"
-              >
+              <LogOut className="text-text-secondary dark:text-white" />
+              <SimpleText tag="span" color="primary-900" className="mr-2" weight="font-semibold">
                 Logout
               </SimpleText>
             </Link>
