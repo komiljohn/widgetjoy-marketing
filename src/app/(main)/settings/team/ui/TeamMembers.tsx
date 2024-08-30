@@ -3,7 +3,7 @@
 import { Plus } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 
 import { Button } from "@/components/ui/button";
 import Table from "@/components/ui/table";
@@ -56,7 +56,9 @@ export default function TeamMembers() {
           </div>
         </div>
       </div>
-      <TeamMembersModal />
+      <Suspense>
+        <TeamMembersModal />
+      </Suspense>
     </>
   );
 }

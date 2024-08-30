@@ -33,7 +33,7 @@ export function PasswordInput({ label, error, placeholder, isRequired, ...props 
   const ref = useRef<HTMLInputElement>(null);
 
   const styles =
-    "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] pl-[11px] pr-9 focus-ring placeholder:text-text-disabled text-primary-900 disabled:bg-disabled placeholder:text-base dark:bg-bg-primary-dark dark:border-dark-primary dark:text-tertiary-dark-600 dark:border-border-dark-primary error:border-border-error [data-invalid]:border-error-primary placeholder:select-none dark:focus:border-brand-600 focus:border-border-brand";
+    "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] pl-[11px] pr-9 placeholder:text-text-disabled text-primary-900 disabled:bg-disabled placeholder:text-base dark:bg-bg-primary-dark dark:border-dark-primary dark:text-tertiary-dark-600 dark:border-border-dark-primary error:border-border-error [data-invalid]:border-error-primary placeholder:select-none dark:focus:border-brand-600 outline-none focus:border-brand-600 focus:shadow-button-ring";
 
   return (
     <TextField

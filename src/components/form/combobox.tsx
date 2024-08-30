@@ -26,7 +26,13 @@ export function FormComboBox<T extends object>({ name, label, children, ...props
       name={name}
       control={control}
       render={({ field, fieldState: { error } }) => (
-        <ComboBox {...props} selectedKey={field.value} onSelectionChange={field.onChange} menuTrigger="focus">
+        <ComboBox
+          {...props}
+          isInvalid={!!error}
+          selectedKey={field.value}
+          onSelectionChange={field.onChange}
+          menuTrigger="focus"
+        >
           <Label>{label}</Label>
           <div className={twMerge("relative", label && "mt-1")}>
             <Input className={textInputStyles} />
