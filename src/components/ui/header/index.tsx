@@ -35,13 +35,13 @@ export default function Header() {
             <div className="flex gap-1 max-lg:hidden">
               <NavItem
                 href={Routes.dashboard}
-                leftIcon={<LayoutGrid className="text-text-disabled dark:text-tertiary-dark-600" size={20} />}
+                lefticon={<LayoutGrid className="text-text-disabled dark:text-tertiary-dark-600" size={20} />}
               >
                 Dashboard
               </NavItem>
               <NavItem
-                href={Routes.settings_team}
-                leftIcon={<Settings className="text-text-disabled dark:text-tertiary-dark-600" size={20} />}
+                href={Routes.settings}
+                lefticon={<Settings className="text-text-disabled dark:text-tertiary-dark-600" size={20} />}
               >
                 Settings
               </NavItem>
@@ -57,13 +57,13 @@ export default function Header() {
           </Button>
           <div className="flex items-center gap-4 max-lg:hidden">
             {isSettingsPage ? (
-              <Link href={Routes.dashboard_new} tabIndex={-1}>
-                <Button variant="secondary" leftIcon={<Plus size={20} />}>
+              <Link href={Routes.widget_create} tabIndex={-1}>
+                <Button variant="secondary" lefticon={<Plus size={20} />}>
                   Add new widget
                 </Button>
               </Link>
             ) : (
-              <Button leftIcon={<Zap size={20} />}>Upgrade now</Button>
+              <Button lefticon={<Zap size={20} />}>Upgrade now</Button>
             )}
             <WorkspaceDropdown />
             <UserMenuDropdown />

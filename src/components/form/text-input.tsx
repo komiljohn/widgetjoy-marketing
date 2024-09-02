@@ -25,16 +25,16 @@ interface TextInputProps extends TextFieldProps {
   error?: string;
   placeholder?: string;
   type?: "multiline";
-  leftIcon?: ReactElement;
+  lefticon?: ReactElement;
   className?: string;
 }
 
 export const textInputStyles =
-  "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] px-[11px] placeholder:text-text-disabled placeholder:text-base text-base text-primary-900 disabled:bg-disabled dark:bg-bg-primary-dark dark:border-dark-primary dark:text-primary-dark-900 dark:border-border-dark-primary dark:focus:border-brand-600 focus:border-border-brand outline-none focus:border-brand-600 focus:shadow-button-ring";
+  "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] px-[11px] placeholder:text-text-disabled placeholder:text-base text-base text-primary-900 disabled:bg-disabled dark:bg-bg-primary-dark dark:border-dark-primary dark:text-primary-dark-900 dark:border-border-dark-primary dark:focus:border-brand-600 focus:border-border-brand outline-none focus:border-brand-600 focus:shadow-button-ring dark:focus:shadow-button-ring";
 
-export function TextInput({ leftIcon, label, error, placeholder, type, isRequired, ...props }: TextInputProps) {
-  const clonedIcon = leftIcon
-    ? cloneElement(leftIcon, { className: "absolute left-[13px] top-[calc(50%-10px)] text-text-disabled" })
+export function TextInput({ lefticon, label, error, placeholder, type, isRequired, ...props }: TextInputProps) {
+  const clonedIcon = lefticon
+    ? cloneElement(lefticon, { className: "absolute left-[13px] top-[calc(50%-10px)] text-text-disabled" })
     : null;
 
   return (
@@ -50,13 +50,13 @@ export function TextInput({ leftIcon, label, error, placeholder, type, isRequire
             rows={4}
             placeholder={placeholder}
             className={twMerge(textInputStyles, error && "border-brand-600 focus:border-brand-600")}
-            style={{ paddingLeft: leftIcon ? "41px" : "11px" }}
+            style={{ paddingLeft: lefticon ? "41px" : "11px" }}
           />
         ) : (
           <Input
             placeholder={placeholder}
             className={twMerge(textInputStyles, error && "border-brand-600 focus:border-brand-600")}
-            style={{ paddingLeft: leftIcon ? "41px" : "11px" }}
+            style={{ paddingLeft: lefticon ? "41px" : "11px" }}
           />
         )}
         {clonedIcon}

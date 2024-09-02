@@ -21,7 +21,7 @@ export default function Page() {
     <div className="container px-4 mx-auto pt-[54px] pb-[144px]">
       <section className="flex max-md:flex-col justify-between mb-6">
         <Link href="/" tabIndex={-1} className="md:hidden">
-          <Button textColor="text-disabled" className="w-fit mb-4" variant="link" leftIcon={<ArrowLeft size={20} />}>
+          <Button textColor="text-disabled" className="w-fit mb-4" variant="link" lefticon={<ArrowLeft size={20} />}>
             Back to dashboard
           </Button>
         </Link>
@@ -35,7 +35,7 @@ export default function Page() {
         </div>
         <div className="flex gap-4">
           <Link href="/" tabIndex={-1} className="max-md:hidden">
-            <Button variant="secondary" leftIcon={<ArrowLeft size={20} />}>
+            <Button variant="secondary" lefticon={<ArrowLeft size={20} />}>
               Back to dashboard
             </Button>
           </Link>
@@ -66,9 +66,11 @@ export default function Page() {
               <SimpleText color="quaternary-500" className="mb-4">
                 {item.subtitle}
               </SimpleText>
-              <Button variant="secondary" className="w-full">
-                Get it & customize
-              </Button>
+              <Link href={Routes.widget_detail(item.id)} tabIndex={-1}>
+                <Button variant="secondary" className="w-full">
+                  Get it & customize
+                </Button>
+              </Link>
             </div>
           </article>
         ))}

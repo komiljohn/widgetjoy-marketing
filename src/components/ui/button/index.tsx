@@ -7,7 +7,7 @@ export interface ButtonProps extends RACButtonProps {
   textColor?: "brand-500" | "text-disabled";
   isLoading?: boolean;
   variant?: "primary" | "secondary" | "destructive" | "link";
-  leftIcon?: ReactNode;
+  lefticon?: ReactNode;
   rightIcon?: ReactNode;
   isIcon?: boolean;
 }
@@ -51,7 +51,7 @@ export function Button(props: ButtonProps) {
         button({ ...renderProps, textColor: props.textColor, variant: props.variant, isIcon: props.isIcon, className })
       )}
     >
-      {props.isLoading ? <Loader size={16} className="animate-spin" /> : props.leftIcon}
+      {props.isLoading ? <Loader size={16} className="animate-spin" /> : props.lefticon}
       <>{props.children}</>
       {props.rightIcon && props.rightIcon}
     </RACButton>

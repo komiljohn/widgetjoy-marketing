@@ -66,7 +66,7 @@ export default function MenuSheet() {
               </SimpleText>
             </div>
           ))}
-          <Button className="w-full" variant="secondary" leftIcon={<Plus />}>
+          <Button className="w-full" variant="secondary" lefticon={<Plus />}>
             Create new workspace
           </Button>
         </div>

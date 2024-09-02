@@ -66,7 +66,7 @@ export default function WorkspaceDropdown() {
           <Section className="pt-1">
             <Header>
               <SimpleText color="quaternary-500" className="py-3 px-4 text-sm mb-1" weight="font-semibold">
-                Select Team
+                Switch Teams
               </SimpleText>
             </Header>
             {workspaces.map((item) => (

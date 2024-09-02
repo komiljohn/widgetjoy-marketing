@@ -45,7 +45,7 @@ export default function TeamMembers() {
             <Button
               variant="link"
               textColor="brand-500"
-              leftIcon={<Plus size={20} />}
+              lefticon={<Plus size={20} />}
               onPress={() => setActiveModal(Modals.team_member)}
             >
               Add new member

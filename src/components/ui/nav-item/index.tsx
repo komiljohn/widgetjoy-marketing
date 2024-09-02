@@ -6,14 +6,14 @@ import { tv } from "tailwind-variants";
 
 export interface NavItemProps {
   href: string;
-  leftIcon?: ReactNode;
+  lefticon?: ReactNode;
   rightIcon?: ReactNode;
   children?: ReactNode;
   className?: string;
 }
 
 const button = tv({
-  base: "bg-disabled transition rounded-md flex gap-4 items-center justify-center w-full cursor-pointer font-semibold size-fit px-[13px] py-2 border-none text-base shadow-none focus-ring dark:text-secondary-700 dark:bg-transparent",
+  base: "bg-white hover:bg-disabled dark:hover:bg-active-dark transition rounded-md flex gap-4 items-center justify-center w-full cursor-pointer font-semibold size-fit px-[13px] py-2 border-none text-base shadow-none focus-ring dark:text-secondary-700 dark:bg-transparent",
   variants: {
     isActive: {
       true: "bg-disabled dark:bg-active-dark dark:text-secondary-hover",
@@ -26,7 +26,7 @@ export function NavItem(props: NavItemProps) {
 
   return (
     <Link {...props} className={twMerge(props.className, button({ isActive: pathname.startsWith(props.href) }))}>
-      {props.leftIcon}
+      {props.lefticon}
       <>{props.children}</>
       {props.rightIcon}
     </Link>

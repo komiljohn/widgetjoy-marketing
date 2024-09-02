@@ -28,7 +28,7 @@ export default function ErrorPage() {
           <Button
             className="text-base"
             variant="secondary"
-            leftIcon={<ArrowLeft size={20} />}
+            lefticon={<ArrowLeft size={20} />}
             onPress={() => router.back()}
           >
             Go back

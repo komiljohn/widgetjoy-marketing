@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "selector",
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/layouts/**/*.{js,ts,jsx,tsx,mdx}",
@@ -58,12 +58,17 @@ const config: Config = {
         "button-primary-error-bg_hover": "#B42318",
         "fg-quinary": "#85888E",
         ring: "#2970FFB2",
+        "text-tertiary": "#637083",
+        "widget-bg": "#FCFCFD",
       },
       boxShadow: {
         input: "0px 2px 2px 0px #E2E2EC33",
         xs: "0px 1px 2px 0px #1018280D",
         "button-ring": "0px 0px 0px 4px #FF4F183D",
+        "button-ring-gray": "0px 0px 0px 4px #EAECF0",
+        "button-ring-dark": "0px 0px 0px 4px #333741",
         popup: "0px 4px 6px -2px #10182808, 0px 12px 16px -4px #10182814",
+        sm: "0px 1px 2px 0px #1018280F, 0px 1px 3px 0px #1018281A",
       },
       backgroundImage: {
         "login-light-bg": "url(/icons/login-light-bg.svg)",

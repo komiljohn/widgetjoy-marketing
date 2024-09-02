@@ -22,7 +22,7 @@ const meta: Meta<StoryProps> = {
   args: {
     isDisabled: false,
     children: "Button CTA",
-    leftIcon: <Circle size={20} />,
+    lefticon: <Circle size={20} />,
     rightIcon: <Circle size={20} />,
   },
 };

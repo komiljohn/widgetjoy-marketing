@@ -91,7 +91,7 @@ export default function TeamMembersModal() {
               <div key={idx} className="flex gap-2">
                 <FormTextInput
                   aria-label="Email"
-                  leftIcon={<Mail size={20} />}
+                  lefticon={<Mail size={20} />}
                   name={`emails.${idx}.email`}
                   placeholder="you@untitledui.com"
                   className="mb-3 grow"
@@ -106,7 +106,7 @@ export default function TeamMembersModal() {
             <Button
               variant="link"
               textColor="brand-500"
-              leftIcon={<Plus size={20} />}
+              lefticon={<Plus size={20} />}
               onPress={() => append({ email: "" })}
             >
               Add another

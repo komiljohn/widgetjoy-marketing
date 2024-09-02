@@ -1,7 +1,12 @@
 import { ReactNode } from "react";
-import { FieldError as AriaFieldError, Label as AriaLabel } from "react-aria-components";
+import { FieldError as AriaFieldError, Label as AriaLabel, LabelProps } from "react-aria-components";
 
-export function Label({ children, isRequired }: { children: ReactNode; isRequired?: boolean }) {
+interface ILabel extends LabelProps {
+  children: ReactNode;
+  isRequired?: boolean;
+}
+
+export function Label({ children, isRequired }: ILabel) {
   return (
     <AriaLabel className="text-login-card-title dark:text-primary-dark-900 font-medium text-sm">
       {children} {isRequired && <span>*</span>}

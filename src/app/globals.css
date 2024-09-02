@@ -42,11 +42,24 @@ body {
   .focus-ring {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    &:focus {
+    &:focus-visible {
       outline-color: #2970ffb2;
     }
     &:active {
       outline-color: transparent;
     }
   }
+}
+
+.bg-dots {
+  background: #fcfcfd;
+  background-image: radial-gradient(#d0d5dd 0.5px, transparent 0);
+  background-size: 7px 7px;
+  background-position: -1px -1px;
+}
+.dark .bg-dots {
+  background: #111621;
+  background-image: radial-gradient(#2e2b2b 0.5px, transparent 0);
+  background-size: 7px 7px;
+  background-position: -1px -1px;
 }
