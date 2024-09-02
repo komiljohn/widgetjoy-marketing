@@ -15,7 +15,7 @@ const track = tv({
   variants: {
     isSelected: {
       false:
-        "bg-bg-disabled dark:bg-button-secondary-fg group-focus-visible/switch:shadow-button-ring-gray group-focus-visible/switch:shadow-button-ring-dark",
+        "bg-bg-disabled dark:bg-button-secondary-fg group-focus-visible/switch:shadow-button-ring-gray dark:group-focus-visible/switch:shadow-button-ring-dark",
       true: "bg-brand-600 dark:bg-brand-600 group-focus-visible/switch:shadow-button-ring",
     },
     isDisabled: {
