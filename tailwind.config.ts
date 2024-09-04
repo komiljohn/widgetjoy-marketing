@@ -39,7 +39,7 @@ const config: Config = {
         "border-brand": "#FFA170",
         "button-secondary-fg": "#344054",
         "error-primary": "#D92D20",
-        "fg-success-primary": "#079455",
+        "fg-success": "#079455",
         "secondary-hover": "#ECECED",
         "brand-dark-noisy": "#FF4F180D",
         "blue-dark-500": "#2970FF",
@@ -60,6 +60,7 @@ const config: Config = {
         ring: "#2970FFB2",
         "text-tertiary": "#637083",
         "widget-bg": "#FCFCFD",
+        "fg-warning": "#DC6803",
       },
       boxShadow: {
         input: "0px 2px 2px 0px #E2E2EC33",

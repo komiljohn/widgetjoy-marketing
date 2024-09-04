@@ -1,6 +1,6 @@
 "use client";
 
-import { Code, Edit3Icon, EllipsisVertical } from "lucide-react";
+import { Code, Edit3Icon } from "lucide-react";
 import React from "react";
 
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,7 @@ import { useModalStore } from "@/store/useModalStore";
 import { Modals } from "@/utils/constants";
 
 import EmbedCodeModal from "./EmbedCodeModal";
+import WidgetDetailsDropdown from "./WidgetDetailsDropdown";
 
 export default function WidgetHeader() {
   const { setActiveModal } = useModalStore();
@@ -27,9 +28,7 @@ export default function WidgetHeader() {
             <Button variant="secondary" lefticon={<Code size={20} />} onPress={() => setActiveModal(Modals.embed_code)}>
               Get embed code
             </Button>
-            <Button variant="secondary" isIcon>
-              <EllipsisVertical size={20} />
-            </Button>
+            <WidgetDetailsDropdown />
           </div>
         </div>
       </div>
