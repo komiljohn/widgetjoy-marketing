@@ -1,24 +1,27 @@
 import React from "react";
 
+import { Switch } from "@/components/form/switch";
 import { TextInput } from "@/components/form/text-input";
-import { Button } from "@/components/ui/button";
+import Divider from "@/components/ui/divider";
 import { SimpleText } from "@/components/ui/typography";
 
-export default function GeneralTabItem() {
+export default function DetailsTabItem() {
   return (
-    <div className="p-6 border-b border-border-secondary dark:border-active-dark overflow-auto min-h-[calc(100dvh-146px)]">
+    <div className="p-6 overflow-auto min-h-[calc(100dvh-146px)]">
       <SimpleText className="mb-1" weight="font-semibold">
-        Content
+        Labels
       </SimpleText>
       <SimpleText color="secondary-700" className="text-sm mb-6" weight="font-medium">
         Update the details of your widget.
       </SimpleText>
       <div className="space-y-4 mb-6">
         <TextInput label="Heading" />
-        <TextInput label="Widget description" />
-        <TextInput label="Thank you message" />
+        <TextInput label="Button label" />
       </div>
-      <Button className="w-full">Save changes</Button>
+      <Divider className="mb-6" />
+      <Switch className="mb-6" description="Capture screenshot from current page with one click">
+        Capture screenshot
+      </Switch>
     </div>
   );
 }

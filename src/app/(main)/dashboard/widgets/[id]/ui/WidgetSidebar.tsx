@@ -13,8 +13,7 @@ import { SimpleText } from "@/components/ui/typography";
 import { ISidebarItem, sidebarItems, SidebarKeys } from "./sidebarItems";
 import AppearanceTabItem from "./tabItems/AppearanceTabItem";
 import CustomCSSTabItem from "./tabItems/CustomCSSTabItem";
-import FormDetailsTabItem from "./tabItems/FormDetailsTabItem";
-import GeneralTabItem from "./tabItems/GeneralTabItem";
+import DetailsTabItem from "./tabItems/DetailsTabItem";
 
 export default function WidgetSidebar() {
   const router = useRouter();
@@ -74,9 +73,8 @@ export default function WidgetSidebar() {
             exit={{ x: -15, opacity: 0 }}
             className="relative w-[344px] bg-white opacity-0 dark:bg-bg-primary-dark border-r border-border-secondary dark:border-active-dark"
           >
-            {selectedKey === SidebarKeys.General && <GeneralTabItem />}
             {selectedKey === SidebarKeys.Appearance && <AppearanceTabItem />}
-            {selectedKey === SidebarKeys.Form_Details && <FormDetailsTabItem />}
+            {selectedKey === SidebarKeys.Details && <DetailsTabItem />}
             {selectedKey === SidebarKeys.Custom_CSS && <CustomCSSTabItem />}
             <Button
               variant="link"

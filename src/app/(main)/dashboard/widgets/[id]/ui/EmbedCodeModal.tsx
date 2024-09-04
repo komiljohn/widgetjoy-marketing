@@ -52,7 +52,7 @@ export default function EmbedCodeModal() {
         <SimpleText color="tertiary-600" className="mb-5 text-sm">
           Place this HTML code into your website to embed the widget.
         </SimpleText>
-        <div className="flex shadow-xs rounded-md border dark:border-border-dark-primary">
+        <div className="flex shadow-xs rounded-md border border-border-secondary dark:border-border-dark-primary">
           <SimpleText
             color="quaternary-500"
             className="select-none grow border-r bg-disabled dark:border-border-dark-primary dark:bg-secondary-dark px-3 py-[7px] rounded-l-md truncate transition"

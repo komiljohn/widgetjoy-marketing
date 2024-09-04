@@ -1,16 +1,14 @@
-import { CodeSquare, LucideProps, Palette, Settings2, SquareArrowOutUpRight, TextCursorInput } from "lucide-react";
+import { CodeSquare, LucideProps, Palette, SquareArrowOutUpRight, TextCursorInput } from "lucide-react";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
 
 import Routes from "@/utils/routes";
 
 import AppearanceTabItem from "./tabItems/AppearanceTabItem";
 import CustomCSSTabItem from "./tabItems/CustomCSSTabItem";
-import FormDetailsTabItem from "./tabItems/FormDetailsTabItem";
-import GeneralTabItem from "./tabItems/GeneralTabItem";
+import DetailsTabItem from "./tabItems/DetailsTabItem";
 
 export enum SidebarKeys {
-  General = "general",
-  Form_Details = "form_details",
+  Details = "details",
   Appearance = "appearance",
   Custom_CSS = "custom_css",
   Preview = "preview",
@@ -27,16 +25,10 @@ export interface ISidebarItem {
 
 export const sidebarItems: ISidebarItem[] = [
   {
-    id: SidebarKeys.General,
-    title: "General",
-    icon: Settings2,
-    element: GeneralTabItem,
-  },
-  {
-    id: SidebarKeys.Form_Details,
-    title: "Form details",
+    id: SidebarKeys.Details,
+    title: "Details",
     icon: TextCursorInput,
-    element: FormDetailsTabItem,
+    element: DetailsTabItem,
   },
   {
     id: SidebarKeys.Appearance,

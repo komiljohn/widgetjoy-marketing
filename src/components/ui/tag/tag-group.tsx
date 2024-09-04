@@ -48,7 +48,7 @@ export function MyTagGroup<T extends object>({
 }
 
 const tagStyles = tv({
-  base: "transition outline-4 -outline-offset-1 outline-blue-dark-500 px-[15px] py-[9px] text-button-secondary-fg dark:text-secondary-700 text-sm font-semibold grow text-center",
+  base: "transition outline-4 -outline-offset-1 outline-blue-dark-500 px-[15px] py-[9px] text-button-secondary-fg dark:text-secondary-700 text-sm font-semibold grow text-center cursor-pointer",
   variants: {
     isSelected: {
       true: "bg-disabled dark:bg-secondary-dark",

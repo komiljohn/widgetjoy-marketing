@@ -3,6 +3,7 @@ import { useTheme } from "next-themes";
 import React, { useState } from "react";
 
 import Badge from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { SimpleText } from "@/components/ui/typography";
 
 export default function CustomCSSTabItem() {
@@ -18,7 +19,7 @@ export default function CustomCSSTabItem() {
       <SimpleText className="mb-1" weight="font-semibold">
         Custom styles
       </SimpleText>
-      <SimpleText color="secondary-700" className="text-sm mb-6" weight="font-medium">
+      <SimpleText color="secondary-700" className="text-sm mb-6 max-w-[248px]" weight="font-medium">
         Add your custom styles and make your widget outstanding.
       </SimpleText>
       <div className="mb-6 min-h-[300px]">
@@ -51,6 +52,7 @@ export default function CustomCSSTabItem() {
           ))}
         </div>
       </div>
+      <Button className="w-full mt-6">Apply changes</Button>
     </div>
   );
 }
