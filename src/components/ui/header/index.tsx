@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <>
       <header className="border-b border-border-secondary dark:border-active-dark bg-white dark:bg-bg-primary-dark">
-        <div className="container px-4 mx-auto py-4 flex items-center justify-between">
+        <div className="md:px-8 px-4 mx-auto py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link href="/" className="focus-ring rounded-sm">
               <LogoSvg />
@@ -57,7 +57,7 @@ export default function Header() {
           </Button>
           <div className="flex items-center gap-4 max-lg:hidden">
             {isSettingsPage ? (
-              <Link href={Routes.widget_create} tabIndex={-1}>
+              <Link href={Routes.dashboard_new} tabIndex={-1}>
                 <Button variant="secondary" lefticon={<Plus size={20} />}>
                   Add new widget
                 </Button>

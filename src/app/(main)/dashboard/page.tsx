@@ -16,7 +16,7 @@ export default function Dashboard() {
     <div className="container px-4 mx-auto pt-[54px] pb-12">
       <div className="flex items-center justify-between mb-6">
         <Heading className="text-2xl font-medium text-primary-900 dark:text-primary-dark-900">Dashboard</Heading>
-        <Link href={Routes.widget_create} tabIndex={-1}>
+        <Link href={Routes.dashboard_new} tabIndex={-1}>
           <Button className="max-md:hidden" lefticon={<Plus size={20} />}>
             Add new widget
           </Button>
@@ -41,7 +41,7 @@ export default function Dashboard() {
                   {item.title}
                 </SimpleText>
               </div>
-              <Link href={Routes.dashboard_new} tabIndex={-1}>
+              <Link href={Routes.widget_detail(item.id)} tabIndex={-1}>
                 <Button variant="secondary">See widget</Button>
               </Link>
             </div>

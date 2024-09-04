@@ -9,6 +9,7 @@ const Routes = {
   settings_billing: "/settings/billing",
   settings_profile: "/settings/profile",
   widget_detail: (id: string | number) => `/dashboard/widgets/${id}`,
+  widget_preview: (id: string | number) => `/preview/${id}/`,
   widget_create: `/dashboard/widgets/create`,
 };
 

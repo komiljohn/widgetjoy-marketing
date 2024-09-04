@@ -22,7 +22,7 @@ const button = tv({
         "px-[13px] py-[9px] shadow-xs bg-white border-border-primary rounded-md text-button-secondary-fg text-sm hover:bg-disabled disabled:border-border-secondary disabled:text-fg-disabled dark:border-border-dark-primary dark:bg-secondary-dark dark:text-secondary-700 dark:hover:bg-active-dark dark:disabled:border-border-dark-primary",
       destructive:
         "text-sm bg-button-primary-error-bg hover:bg-button-primary-error-bg_hover px-3.5 py-2.5 pressed:bg-button-primary-error-bg_hover text-white shadow-xs disabled:bg-bg-disabled disabled:text-fg-disabled disabled:cursor-default border-none",
-      link: "border-none disabled:text-fg-disabled disabled:cursor-default text-sm font-normal",
+      link: "border-none disabled:text-fg-disabled disabled:cursor-default text-sm font-semibold",
     },
     isIcon: {
       true: "p-[9px]",

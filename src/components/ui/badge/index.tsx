@@ -20,8 +20,13 @@ interface Props {
   className?: string;
   color?: "gray" | "brand";
   children: ReactNode;
+  onClick?: () => void;
 }
 
-export default function Badge({ className, color, children }: Props) {
-  return <div className={twMerge(className, badge({ variant: color, className }))}>{children}</div>;
+export default function Badge({ className, color, children, ...props }: Props) {
+  return (
+    <div className={twMerge(className, badge({ variant: color, className }))} {...props}>
+      {children}
+    </div>
+  );
 }

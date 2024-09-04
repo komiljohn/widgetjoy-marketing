@@ -9,7 +9,7 @@ import { SimpleText } from "@/components/ui/typography";
 export default function WidgetHeader() {
   return (
     <div className="bg-white dark:bg-bg-primary-dark border-b border-border-secondary dark:border-active-dark">
-      <div className="flex items-center justify-between container mx-auto p-4">
+      <div className="flex items-center justify-between mx-auto md:px-8 px-4 py-4">
         <SimpleText className="flex items-center gap-2">
           <SimpleText color="primary-900" weight="font-medium" className="text-xl leading-[30px]" tag="span">
             30% Discount for New collections
