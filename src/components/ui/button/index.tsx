@@ -10,6 +10,7 @@ export interface ButtonProps extends RACButtonProps {
   lefticon?: ReactNode;
   rightIcon?: ReactNode;
   isIcon?: boolean;
+  size?: "base" | "sm";
 }
 
 const button = tv({
@@ -23,6 +24,10 @@ const button = tv({
       destructive:
         "text-sm bg-button-primary-error-bg hover:bg-button-primary-error-bg_hover px-3.5 py-2.5 pressed:bg-button-primary-error-bg_hover text-white shadow-xs disabled:bg-bg-disabled disabled:text-fg-disabled disabled:cursor-default border-none",
       link: "border-none disabled:text-fg-disabled disabled:cursor-default text-sm font-semibold",
+    },
+    size: {
+      base: "",
+      sm: "",
     },
     isIcon: {
       true: "p-[9px]",
@@ -40,6 +45,13 @@ const button = tv({
     variant: "primary",
     isIcon: false,
   },
+  compoundVariants: [
+    {
+      variant: "secondary",
+      size: "sm",
+      className: "py-[7px]",
+    },
+  ],
 });
 
 export function Button(props: ButtonProps) {

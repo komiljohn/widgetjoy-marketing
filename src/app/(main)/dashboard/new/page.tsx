@@ -66,7 +66,7 @@ export default function Page() {
               <SimpleText color="quaternary-500" className="mb-4">
                 {item.subtitle}
               </SimpleText>
-              <Link href={Routes.widget_detail(item.id)} tabIndex={-1}>
+              <Link href={Routes.widget_detail_customize(item.id)} tabIndex={-1}>
                 <Button variant="secondary" className="w-full">
                   Get it & customize
                 </Button>

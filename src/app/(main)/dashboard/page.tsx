@@ -41,7 +41,7 @@ export default function Dashboard() {
                   {item.title}
                 </SimpleText>
               </div>
-              <Link href={Routes.widget_detail(item.id)} tabIndex={-1}>
+              <Link href={Routes.widget_detail_customize(item.id)} tabIndex={-1}>
                 <Button variant="secondary">See widget</Button>
               </Link>
             </div>

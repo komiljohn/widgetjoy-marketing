@@ -8,7 +8,8 @@ const Routes = {
   settings_team: "/settings/team",
   settings_billing: "/settings/billing",
   settings_profile: "/settings/profile",
-  widget_detail: (id: string | number) => `/dashboard/widgets/${id}`,
+  widget_detail_customize: (id: string | number) => `/dashboard/widgets/${id}/customize`,
+  widget_detail_submission: (id: string | number) => `/dashboard/widgets/${id}/submissions`,
   widget_preview: (id: string | number) => `/preview/${id}/`,
   widget_create: `/dashboard/widgets/create`,
 };
