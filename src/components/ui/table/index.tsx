@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
 import { Cell, Column, Row, Table as AriaTable, TableBody, TableHeader } from "react-aria-components";
+import { twMerge } from "tailwind-merge";
 
 import { ITableColumn } from "@/app/(main)/settings/team/fakeData";
 
-import Pagination from "./pagination";
 import Skleton from "../skleton";
-import { twMerge } from "tailwind-merge";
+import Pagination from "./pagination";
 
 interface Props<T> {
   showIndexes?: boolean;
