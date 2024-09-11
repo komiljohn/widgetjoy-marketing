@@ -3,6 +3,7 @@
 import { X } from "lucide-react";
 import React, { ReactNode } from "react";
 import { Dialog, Modal as AriaModal, ModalOverlay, ModalOverlayProps } from "react-aria-components";
+import { twMerge } from "tailwind-merge";
 import { tv } from "tailwind-variants";
 
 import { Button } from "../button";
@@ -12,6 +13,7 @@ interface Props extends ModalOverlayProps {
   onClose: () => void;
   children: ReactNode;
   ariaLabel: string;
+  modalClassName?: string;
 }
 
 const overlayStyles = tv({
@@ -38,10 +40,10 @@ const modalStyles = tv({
   },
 });
 
-export default function Modal({ isOpen, onClose, children, ...props }: Props) {
+export default function Modal({ isOpen, onClose, children, modalClassName, ...props }: Props) {
   return (
     <ModalOverlay isOpen={isOpen} onOpenChange={onClose} {...props} className={overlayStyles}>
-      <AriaModal isDismissable {...props} className={modalStyles}>
+      <AriaModal isDismissable {...props} className={twMerge(modalStyles(), modalClassName)}>
         <Button
           variant="link"
           onPress={onClose}

@@ -1,14 +1,13 @@
 import "./style.css";
 
 import React, { useState } from "react";
-import { Button, ColorPickerProps, DialogTrigger, Popover } from "react-aria-components";
-import { RgbaColor, RgbaColorPicker } from "react-colorful";
+import { Button, ColorPickerProps, DialogTrigger } from "react-aria-components";
+import { HexAlphaColorPicker, HexColorInput } from "react-colorful";
 import { twMerge } from "tailwind-merge";
-
-import { rgbaToHex } from "@/utils/rgbaToHex";
 
 import { SimpleText } from "../ui/typography";
 import { Label } from "./field";
+import { MyPopover } from "./popover";
 import { textInputStyles } from "./text-input";
 
 interface MyColorPickerProps extends ColorPickerProps {
@@ -16,7 +15,7 @@ interface MyColorPickerProps extends ColorPickerProps {
 }
 
 export default function MyColorPicker({ label }: MyColorPickerProps) {
-  const [color, setColor] = useState<RgbaColor>({ r: 255, g: 255, b: 255, a: 1 });
+  const [color, setColor] = useState("#fff");
 
   return (
     <DialogTrigger>
@@ -25,16 +24,24 @@ export default function MyColorPicker({ label }: MyColorPickerProps) {
         <Button id="color" className={twMerge(textInputStyles, "flex items-center gap-2")}>
           <div
             className="size-5 border border-border-secondary dark:border-secondary-dark rounded-full"
-            style={{ backgroundColor: `rgba(${color?.r}, ${color?.g}, ${color?.b}, ${color?.a})` }}
+            style={{ backgroundColor: color }}
           />
           <SimpleText color="quaternary-500" className="">
-            {rgbaToHex(`rgba(${color?.r}, ${color?.g}, ${color?.b}, ${color?.a})`)}
+            {color}
           </SimpleText>
         </Button>
       </div>
-      <Popover placement="bottom start">
-        <RgbaColorPicker color={color} onChange={setColor} />
-      </Popover>
+      <MyPopover>
+        <div className="bg-white rounded-md">
+          <HexAlphaColorPicker color={color} onChange={setColor} />
+          <HexColorInput
+            prefixed
+            color={color}
+            onChange={setColor}
+            className={twMerge(textInputStyles, "mt-2 py-1 text-sm")}
+          />
+        </div>
+      </MyPopover>
     </DialogTrigger>
   );
 }

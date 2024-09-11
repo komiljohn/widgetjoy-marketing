@@ -10,12 +10,14 @@ export default function SubmissionsTable() {
   const [itemOffset, setItemOffset] = useState(0);
   const [isPending, setIsPending] = useState(false);
 
+  const itemsPerPage = 10;
+
   const computedData = useMemo(() => {
     setIsPending(true);
     setTimeout(() => {
       setIsPending(false);
     }, 500);
-    return tableData.slice(itemOffset * 3, (itemOffset + 1) * 3);
+    return tableData.slice(itemOffset * itemsPerPage, (itemOffset + 1) * itemsPerPage);
   }, [tableData, itemOffset]);
 
   return (
@@ -26,6 +28,7 @@ export default function SubmissionsTable() {
       isPending={isPending}
       columns={tableColumns}
       data={computedData}
+      itemsPerPage={itemsPerPage}
       totalCount={tableData.length}
       itemOffset={itemOffset}
       setItemOffset={setItemOffset}

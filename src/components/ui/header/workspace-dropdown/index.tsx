@@ -42,21 +42,21 @@ export default function WorkspaceDropdown() {
         <Menu className="outline-none">
           <Section className="border-b border-border-secondary dark:border-secondary-dark pb-[3px]">
             <Header>
-              <SimpleText color="quaternary-500" className="py-3 px-4 text-sm mb-1" weight="font-semibold">
+              <SimpleText color="quaternary-500" className="p-3 text-sm" weight="font-semibold">
                 Manage Team
               </SimpleText>
             </Header>
             <MenuItem className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark mb-1">
-              <Link href={Routes.settings_team} className="flex items-center gap-2 p-4">
-                <Settings2 className="text-text-secondary dark:text-white" />
+              <Link href={Routes.settings_team} className="flex items-center gap-2 p-3">
+                <Settings2 size={20} className="text-text-secondary dark:text-white" />
                 <SimpleText tag="span" color="primary-900" weight="font-semibold">
                   Manage Team
                 </SimpleText>
               </Link>
             </MenuItem>
             <MenuItem className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark">
-              <Link href={`${Routes.settings_team}?invite-modal=true`} className="flex items-center gap-2 p-4">
-                <Plus className="text-text-secondary dark:text-white" />
+              <Link href={`${Routes.settings_team}?invite-modal=true`} className="flex items-center gap-2 p-3">
+                <Plus size={20} className="text-text-secondary dark:text-white" />
                 <SimpleText tag="span" color="primary-900" weight="font-semibold">
                   Create new Team
                 </SimpleText>
@@ -65,7 +65,7 @@ export default function WorkspaceDropdown() {
           </Section>
           <Section className="pt-1">
             <Header>
-              <SimpleText color="quaternary-500" className="py-3 px-4 text-sm mb-1" weight="font-semibold">
+              <SimpleText color="quaternary-500" className="p-3 text-sm" weight="font-semibold">
                 Switch Teams
               </SimpleText>
             </Header>
@@ -73,10 +73,10 @@ export default function WorkspaceDropdown() {
               <MenuItem
                 key={item.id}
                 onAction={() => setSelectedWorkspace(item.name)}
-                className="flex items-center justify-between gap-2 p-4 outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark mb-1"
+                className="flex items-center justify-between gap-2 p-3 outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark mb-1"
               >
                 <span className="flex items-center gap-2">
-                  <Building2 className="text-text-secondary dark:text-white" />
+                  <Building2 size={20} className="text-text-secondary dark:text-white" />
                   <SimpleText tag="span" color="primary-900" weight="font-semibold">
                     {item.name}
                   </SimpleText>

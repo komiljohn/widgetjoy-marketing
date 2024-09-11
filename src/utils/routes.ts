@@ -10,6 +10,7 @@ const Routes = {
   settings_profile: "/settings/profile",
   widget_detail_customize: (id: string | number) => `/dashboard/widgets/${id}/customize`,
   widget_detail_submission: (id: string | number) => `/dashboard/widgets/${id}/submissions`,
+  widget_detail_content: (id: string | number) => `/dashboard/widgets/${id}/content`,
   widget_preview: (id: string | number) => `/preview/${id}/`,
   widget_create: `/dashboard/widgets/create`,
 };

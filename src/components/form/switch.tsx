@@ -22,13 +22,6 @@ const track = tv({
       true: "bg-gray-200 dark:bg-zinc-700",
     },
   },
-  compoundVariants: [
-    {
-      isHovered: true,
-      isSelected: true,
-      className: "bg-utility-brand-700",
-    },
-  ],
 });
 
 const handle = tv({

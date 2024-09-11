@@ -1,13 +1,17 @@
+import dayjs, { Dayjs } from "dayjs";
 import { Trash2Icon } from "lucide-react";
 import { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
 
-interface ITeamMember {
+export interface ITeamMember {
   id: number;
   feedback: string;
   feedback_type: string;
-  date: string;
+  date: Dayjs;
+  customer?: string;
+  testimonial?: string;
+  role?: string;
 }
 
 const feedback_text =
@@ -17,7 +21,8 @@ export const tableData: ITeamMember[] = Array.from({ length: 30 }, (_, i) => ({
   id: i + 1,
   feedback_type: `💡 Idea ${i + 1}`,
   feedback: feedback_text,
-  date: `${i + 1}.04.2024`,
+  date: dayjs("2024-01-01", "YYYY-MM-DD").add(i, "day"),
+  customer: "Jack Robinson",
 }));
 
 export interface ITableColumn<T> {

@@ -1,34 +1,85 @@
+import { UploadCloud, X } from "lucide-react";
+import { default as NextImage } from "next/image";
 import { useState } from "react";
-import { FileTrigger } from "react-aria-components";
+import { FileTrigger, ValidationResult } from "react-aria-components";
+import { Controller, useFormContext } from "react-hook-form";
 
 import { Button } from "../ui/button";
-import { SimpleText } from "../ui/typography";
 
-export default function ImageUpload() {
-  const [file, setFile] = useState<string[]>();
+export function FormImageUpload({ name }: { name: string }) {
+  const { control } = useFormContext();
 
   return (
-    <FileTrigger
-      acceptedFileTypes={["image/png", "image/jpg", "image/jpeg", "image/svg"]}
-      onSelect={(e) => {
-        const files = e ? Array.from(e) : [];
-        const filenames = files.map((file) => file.name);
-        setFile(filenames);
-      }}
-    >
-      <div className="flex shadow-xs border border-border-secondary dark:border-border-dark-primary rounded-md">
-        <SimpleText
-          color="quaternary-500"
-          className="select-none grow border-r bg-disabled dark:border-border-dark-primary dark:bg-secondary-dark px-3 py-[7px] rounded-l-md truncate transition"
-        >
-          {file ?? "Choose file"}
-        </SimpleText>
-        <div className="flex items-center justify-center min-w-[82px] max-w-[82px]">
-          <Button variant="secondary" className="border-none rounded-none rounded-r-md px-0 w-full">
-            {file ? "Change" : "Select"}
-          </Button>
+    <Controller
+      name={name}
+      control={control}
+      render={({ field, fieldState: { error } }) => (
+        <ImageUpload errorMessage={error?.message} onSelect={field.onChange} />
+      )}
+    />
+  );
+}
+
+interface ImageUploadProps {
+  onSelect?: (a: string) => void;
+  errorMessage?: string | ((validation: ValidationResult) => string);
+}
+
+export default function ImageUpload({ errorMessage, onSelect }: ImageUploadProps) {
+  const [image, setImage] = useState<HTMLImageElement>();
+
+  function createObjectURL(object: File) {
+    return window.URL ? window.URL.createObjectURL(object) : window.webkitURL.createObjectURL(object);
+  }
+
+  return (
+    <div>
+      <div className="flex items-center gap-3">
+        <div className="relative">
+          {image && (
+            <Button
+              onPress={() => {
+                setImage(undefined);
+                onSelect?.("");
+              }}
+              className="absolute left-[32px] top-0 p-0.5 rounded-full"
+              isIcon
+              variant="secondary"
+            >
+              <X size={14} />
+            </Button>
+          )}
+          <NextImage
+            src={image?.src ?? "/images/default.png"}
+            width={48}
+            height={48}
+            alt="preview"
+            className="rounded-full h-12 object-fill"
+          />
         </div>
+
+        <FileTrigger
+          allowsMultiple={false}
+          acceptedFileTypes={["image/png", "image/jpg", "image/jpeg", "image/svg"]}
+          onSelect={(e) => {
+            const files = e ? Array.from(e) : [];
+            const src = createObjectURL(files[0]);
+            const image = new Image();
+            image.src = src;
+            setImage(image);
+            onSelect?.(image.src);
+          }}
+        >
+          <Button lefticon={<UploadCloud size={20} />} variant="secondary" className="py-[7px]">
+            {image ? "Change photo" : "Upload photo"}
+          </Button>
+        </FileTrigger>
       </div>
-    </FileTrigger>
+      {errorMessage && (
+        <p aria-label="error message" className="text-brand-600 text-sm mt-1.5">
+          {errorMessage?.toString()}
+        </p>
+      )}
+    </div>
   );
 }

@@ -2,6 +2,7 @@ import { ChevronDown } from "lucide-react";
 import React, { ReactNode } from "react";
 import { Button, Key, Select as AriaSelect, SelectProps, SelectValue } from "react-aria-components";
 import { Controller, FieldError as FieldErrorType, useFormContext } from "react-hook-form";
+import { twMerge } from "tailwind-merge";
 
 import { FieldError, Label } from "./field";
 import MyListBox from "./list-box";
@@ -37,9 +38,14 @@ interface MySelectProps<T extends object> extends Omit<SelectProps<T>, "children
 
 export function Select<T extends object>({ children, ...props }: MySelectProps<T>) {
   return (
-    <AriaSelect isInvalid={!!props.error} {...props}>
+    <AriaSelect isInvalid={!!props.error?.message} {...props}>
       <Label isRequired={props.isRequired}>{props.label}</Label>
-      <Button className="flex items-center gap-2 py-[7px] px-[13px] border border-border-primary rounded-md text-text-disabled font-medium dark:border-border-dark-primary w-full justify-between focus-ring">
+      <Button
+        className={twMerge(
+          "flex items-center gap-2 py-[9px] px-[13px] border border-border-primary rounded-md text-text-disabled font-medium dark:border-border-dark-primary w-full justify-between focus-ring",
+          props.error?.message && "mb-1.5"
+        )}
+      >
         {!props.selectedKey && props.icon}
         <SelectValue className="flex gap-2 truncate" />
         <span aria-hidden="true">

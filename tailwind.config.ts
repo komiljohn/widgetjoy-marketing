@@ -61,6 +61,7 @@ const config: Config = {
         "text-tertiary": "#637083",
         "widget-bg": "#FCFCFD",
         "fg-warning": "#DC6803",
+        "blue-dark-600": "#155EEF",
       },
       boxShadow: {
         input: "0px 2px 2px 0px #E2E2EC33",

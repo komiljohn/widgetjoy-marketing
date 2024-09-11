@@ -24,16 +24,27 @@ export default function WidgetSidebar() {
   const [selectedKey, setSelectedKey] = useState<Key | null>(defaultKey);
 
   const handleUpdateKey = (item: ISidebarItem) => {
-    if (!item.href) {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set("tab", item.id);
-      router.push(`?${params.toString()}`);
-      setSelectedKey(item.id);
+    if (item.id === selectedKey) return;
+    const updateKey = () => {
+      if (!item.href) {
+        const params = new URLSearchParams(searchParams.toString());
+        params.set("tab", item.id);
+        router.push(`?${params.toString()}`);
+        setSelectedKey(item.id);
+      }
+    };
+    if (selectedKey) {
+      setSelectedKey(null);
+      setTimeout(() => {
+        updateKey();
+      }, 250);
+    } else {
+      updateKey();
     }
   };
 
   return (
-    <div className="flex">
+    <div className="flex relative">
       <Menu
         aria-label="Sidebar menu"
         className="w-[110px] border-r border-border-secondary dark:border-active-dark py-2"
@@ -65,13 +76,16 @@ export default function WidgetSidebar() {
           </MenuItem>
         ))}
       </Menu>
-      <AnimatePresence initial={false}>
+      <AnimatePresence mode="sync">
         {selectedKey && (
           <motion.div
             initial={{ x: -15, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -15, opacity: 0 }}
-            className="relative w-[344px] bg-white opacity-0 dark:bg-bg-primary-dark border-r border-border-secondary dark:border-active-dark"
+            exit={{
+              x: -15,
+              opacity: 0,
+            }}
+            className="absolute w-[344px] left-[110px] bg-white opacity-0 dark:bg-bg-primary-dark border-r border-border-secondary dark:border-active-dark"
           >
             {selectedKey === SidebarKeys.Appearance && <AppearanceTabItem />}
             {selectedKey === SidebarKeys.Details && <DetailsTabItem />}

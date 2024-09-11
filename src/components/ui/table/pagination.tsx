@@ -36,7 +36,7 @@ export default function Pagination({ itemsPerPage = 3, totalCount = 0, setItemOf
         renderOnZeroPageCount={null}
       />
       <Button
-        isDisabled={itemOffset === totalCount - 1}
+        isDisabled={(itemOffset + 1) * itemsPerPage === totalCount}
         size="sm"
         variant="secondary"
         onPress={() => setItemOffset?.((p) => (p < totalCount ? p + 1 : p))}

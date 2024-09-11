@@ -5,13 +5,23 @@ import React, { useState } from "react";
 import Badge from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SimpleText } from "@/components/ui/typography";
+import { toastQueue } from "@/providers/ToastProvider";
 
 export default function CustomCSSTabItem() {
   const { theme } = useTheme();
   const [styles, setStyles] = useState<string>();
+  const [isPending, setIsPending] = useState(false);
 
   const handleUpdate = (val?: string) => {
     setStyles(val);
+  };
+
+  const handleSave = () => {
+    setIsPending(true);
+    setTimeout(() => {
+      setIsPending(false);
+      toastQueue.add({ title: "Successfully applied" }, { timeout: 1500 });
+    }, 1000);
   };
 
   return (
@@ -52,7 +62,9 @@ export default function CustomCSSTabItem() {
           ))}
         </div>
       </div>
-      <Button className="w-full mt-6">Apply changes</Button>
+      <Button isLoading={isPending} className="w-full mt-6" onPress={handleSave}>
+        Apply changes
+      </Button>
     </div>
   );
 }

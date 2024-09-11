@@ -26,6 +26,8 @@ export default function WidgetHeader() {
 
   const isCustomizePage = pathname === Routes.widget_detail_customize(id as string);
   const isSubmissionsPage = pathname === Routes.widget_detail_submission(id as string);
+  const showContentTab = pathname.includes("/widgets/faq");
+  const isContentPage = pathname === Routes.widget_detail_content(id as string);
 
   useEffect(() => {
     if (isEditable) inputRef.current?.focus();
@@ -35,24 +37,25 @@ export default function WidgetHeader() {
     <>
       <div className="bg-white dark:bg-bg-primary-dark border-b border-border-secondary dark:border-active-dark">
         <div className="flex items-center justify-between mx-auto md:px-8 px-4 py-4">
-          <div className="flex items-center gap-2">
+          <div className="w-full">
             <input
               ref={inputRef}
               disabled={!isEditable}
-              className="focus-ring rounded-md bg-transparent text-primary-900 dark:text-primary-dark-900 text-xl leading-[30px] font-medium max-w-[250px] truncate"
+              className="focus-ring rounded-md bg-transparent text-primary-900 dark:text-primary-dark-900 text-xl leading-[30px] font-medium max-w-[356px] w-fit truncate mr-2"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
 
-            <Button variant="link" className="hover:bg-secondary-light p-1.5 dark:hover:bg-secondary-dark">
+            <Button
+              isDisabled={title.trim().length === 0}
+              variant="link"
+              className="hover:bg-secondary-light p-1.5 dark:hover:bg-secondary-dark inline-block"
+              onPress={() => setIsEditable((p) => !p)}
+            >
               {isEditable ? (
-                <Check size={20} className="text-brand-500" onClick={() => setIsEditable(false)} />
+                <Check size={20} className={twMerge("text-brand-500", title.trim().length === 0 && "opacity-50")} />
               ) : (
-                <Edit3Icon
-                  className="button-secondary-fg  dark:text-secondary-700"
-                  size={20}
-                  onClick={() => setIsEditable(true)}
-                />
+                <Edit3Icon className="button-secondary-fg  dark:text-secondary-700" size={20} />
               )}
             </Button>
           </div>
@@ -67,21 +70,25 @@ export default function WidgetHeader() {
                   id="customize"
                   href={Routes.widget_detail_customize(id as string)}
                   className={twMerge(
-                    "py-1.5 px-3",
-                    isCustomizePage && "bg-white dark:bg-secondary-dark shadow-sm rounded-md"
+                    "py-1.5 px-3 focus-ring rounded-md",
+                    isCustomizePage && "bg-white dark:bg-secondary-dark shadow-sm"
                   )}
                 >
                   <SimpleText color="secondary-700">Customize</SimpleText>
                 </Tab>
                 <Tab
-                  href={Routes.widget_detail_submission(id as string)}
+                  href={
+                    showContentTab
+                      ? Routes.widget_detail_content(id as string)
+                      : Routes.widget_detail_submission(id as string)
+                  }
                   className={twMerge(
-                    "py-1.5 px-3",
-                    isSubmissionsPage && "bg-white dark:bg-secondary-dark shadow-sm rounded-md"
+                    "py-1.5 px-3 focus-ring rounded-md",
+                    (isSubmissionsPage || isContentPage) && "bg-white dark:bg-secondary-dark shadow-sm"
                   )}
                   id="submissions"
                 >
-                  Submissions
+                  {showContentTab ? "Content" : "Submissions"}
                 </Tab>
               </TabList>
             </Tabs>

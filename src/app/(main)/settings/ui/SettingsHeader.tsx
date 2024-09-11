@@ -11,7 +11,6 @@ export default function SettingsHeader() {
       <div className="mx-auto md:px-8 px-4 flex gap-1">
         <NavItem href={Routes.settings_team}>Team settings</NavItem>
         <NavItem href={Routes.settings_billing}>Billing</NavItem>
-        <NavItem href={Routes.settings_profile}>Profile</NavItem>
       </div>
     </div>
   );

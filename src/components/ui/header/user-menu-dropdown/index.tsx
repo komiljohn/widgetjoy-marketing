@@ -24,21 +24,21 @@ export default function UserMenuDropdown() {
       >
         <Menu className="outline-none">
           <Header>
-            <SimpleText color="quaternary-500" className="py-3 px-4 text-sm mb-1" weight="font-semibold">
+            <SimpleText color="quaternary-500" className="p-3 text-sm" weight="font-semibold">
               Manage Account
             </SimpleText>
           </Header>
           <MenuItem className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark mb-1">
-            <Link href={Routes.settings_profile} className="flex items-center gap-2 p-4">
-              <User2 className="text-text-secondary dark:text-white" />
+            <Link href={Routes.settings_profile} className="flex items-center gap-2 p-3">
+              <User2 size={20} className="text-text-secondary dark:text-white" />
               <SimpleText tag="span" color="primary-900" className="mr-2" weight="font-semibold">
                 Profile
               </SimpleText>
             </Link>
           </MenuItem>
           <MenuItem className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark">
-            <Link href={Routes.settings_profile} className="flex items-center gap-2 p-4">
-              <LogOut className="text-text-secondary dark:text-white" />
+            <Link href={Routes.login} className="flex items-center gap-2 p-3">
+              <LogOut size={20} className="text-text-secondary dark:text-white" />
               <SimpleText tag="span" color="primary-900" className="mr-2" weight="font-semibold">
                 Logout
               </SimpleText>

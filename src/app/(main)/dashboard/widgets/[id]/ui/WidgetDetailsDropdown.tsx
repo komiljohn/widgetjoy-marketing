@@ -30,20 +30,20 @@ export default function WidgetDetailsDropdown() {
       </Button>
       <Popover
         placement="bottom right"
-        className="w-[231px] bg-white dark:bg-bg-primary-dark outline-none border border-border-secondary dark:border-border-dark-primary rounded-md shadow-popup entering:animate-in entering:fade-in exiting:animate-out exiting:fade-out"
+        className="py-[7px] px-2 w-[231px] bg-white dark:bg-bg-primary-dark outline-none border border-border-secondary dark:border-border-dark-primary rounded-md shadow-popup entering:animate-in entering:fade-in exiting:animate-out exiting:fade-out"
       >
         <Menu className="outline-none">
           <MenuItem
             onAction={handleCopy}
-            className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark flex items-center gap-2 py-2.5 px-[13px]"
+            className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark flex items-center gap-2 p-3"
           >
-            <Link2 size={20} className="text-text-disabled dark:text-white -rotate-45" />
+            <Link2 size={20} className="text-text-secondary dark:text-white -rotate-45" />
             <SimpleText tag="span" color="primary-900" className="mr-2" weight="font-semibold">
               Copy widget link
             </SimpleText>
           </MenuItem>
-          <MenuItem className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark flex items-center gap-2 py-2.5 px-[13px]">
-            <CircleHelp size={20} className="text-text-disabled dark:text-white" />
+          <MenuItem className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark flex items-center gap-2 p-3">
+            <CircleHelp size={20} className="text-text-secondary dark:text-white" />
             <SimpleText tag="span" color="primary-900" className="mr-2" weight="font-semibold">
               Usage guide
             </SimpleText>
@@ -51,9 +51,9 @@ export default function WidgetDetailsDropdown() {
           <MenuItem
             href={Routes.dashboard}
             onAction={handleDelete}
-            className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark flex items-center gap-2 py-2.5 px-[13px]"
+            className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark flex items-center gap-2 p-3"
           >
-            <Trash2 size={20} className="text-text-disabled dark:text-white" />
+            <Trash2 size={20} className="text-text-secondary dark:text-white" />
             <SimpleText tag="span" color="primary-900" className="mr-2" weight="font-semibold">
               Delete widget
             </SimpleText>

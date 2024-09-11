@@ -30,7 +30,7 @@ interface TextInputProps extends TextFieldProps {
 }
 
 export const textInputStyles =
-  "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] px-[11px] placeholder:text-text-disabled placeholder:text-base text-base text-primary-900 disabled:bg-disabled dark:bg-bg-primary-dark dark:border-dark-primary dark:text-primary-dark-900 dark:border-border-dark-primary dark:focus:border-brand-600 focus:border-border-brand outline-none focus:border-brand-600 focus:shadow-button-ring dark:focus:shadow-button-ring";
+  "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] px-[11px] placeholder:text-text-disabled placeholder:text-base text-base text-primary-900 disabled:bg-disabled dark:bg-bg-primary-dark dark:text-primary-dark-900 dark:border-border-dark-primary dark:focus:border-brand-600 focus:border-border-brand outline-none focus:border-brand-600 focus:shadow-button-ring dark:focus:shadow-button-ring";
 
 export function TextInput({ lefticon, label, error, placeholder, type, isRequired, ...props }: TextInputProps) {
   const clonedIcon = lefticon
