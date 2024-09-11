@@ -129,7 +129,7 @@ export default function Table({
                     </Button>
                   </Cell>
                 )}
-                {showIndexes && <Cell className={bodyColStyles}>{itemOffset * itemsPerPage + 1}</Cell>}
+                {showIndexes && <Cell className={bodyColStyles}>{itemOffset * itemsPerPage + row.id}</Cell>}
                 {columns.map((col) => (
                   <Cell className={bodyColStyles} key={row.id + col.key}>
                     {col?.render ? col.render(row) : row[col.key]}

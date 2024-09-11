@@ -8,7 +8,7 @@ export interface ITeamMember {
   id: number;
   feedback: string;
   feedback_type: string;
-  date: Dayjs;
+  date: Dayjs | string;
   customer?: string;
   testimonial?: string;
   role?: string;
@@ -21,7 +21,7 @@ export const tableData: ITeamMember[] = Array.from({ length: 30 }, (_, i) => ({
   id: i + 1,
   feedback_type: `💡 Idea ${i + 1}`,
   feedback: feedback_text,
-  date: dayjs("2024-01-01", "YYYY-MM-DD").add(i, "day"),
+  date: dayjs("2024-01-01", "YYYY-MM-DD").add(i, "day").format("DD.MM.YYYY"),
   customer: "Jack Robinson",
 }));
 

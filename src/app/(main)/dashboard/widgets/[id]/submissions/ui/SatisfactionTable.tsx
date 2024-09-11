@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import Table from "@/components/ui/table";
 
 import getSatisfactionTableColumns from "../utils/getSatisfactionTableColumns";
-import { tableData } from "./fakeData";
 import TestimonialModal from "./TestimonialModal";
 
 export const satisfactionData = Array.from({ length: 30 }, (_, i) => ({
@@ -28,7 +27,7 @@ export default function SatisfactionTable() {
         isDraggable
         isPending={isPending}
         data={satisfactionData}
-        totalCount={tableData.length}
+        totalCount={satisfactionData.length}
         columns={getSatisfactionTableColumns()}
         wrapperClassName="bg-white dark:bg-bg-primary-dark"
       />
