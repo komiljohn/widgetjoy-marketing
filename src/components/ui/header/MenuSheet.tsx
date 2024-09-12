@@ -26,7 +26,9 @@ export default function MenuSheet() {
       <div className="py-6 px-5 bg-white dark:bg-secondary-dark">
         <div className="flex items-center justify-between mb-6">
           <div className="flex gap-6 items-center">
-            <Image src="/images/avatar.png" width={40} height={40} alt="user" />
+            <Link href={Routes.settings_profile} onClick={closeHandler}>
+              <Image src="/images/avatar.png" width={40} height={40} alt="user" />
+            </Link>
             <Link href={Routes.dashboard} tabIndex={-1}>
               <Button variant="link">
                 <LayoutGrid className="text-text-disabled dark:text-tertiary-dark-600" />

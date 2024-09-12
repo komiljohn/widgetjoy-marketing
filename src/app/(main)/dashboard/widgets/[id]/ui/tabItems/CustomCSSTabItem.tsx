@@ -8,6 +8,20 @@ import { SimpleText } from "@/components/ui/typography";
 import { toastQueue } from "@/providers/ToastProvider";
 
 export default function CustomCSSTabItem() {
+  return (
+    <div className="overflow-auto min-h-[calc(100dvh-146px)] p-6">
+      <SimpleText className="mb-1" weight="font-semibold">
+        Custom styles
+      </SimpleText>
+      <SimpleText color="secondary-700" className="text-sm mb-6 max-w-[248px]" weight="font-medium">
+        Add your custom styles and make your widget outstanding.
+      </SimpleText>
+      <CustomCSSTabItemForm />
+    </div>
+  );
+}
+
+export function CustomCSSTabItemForm() {
   const { theme } = useTheme();
   const [styles, setStyles] = useState<string>();
   const [isPending, setIsPending] = useState(false);
@@ -25,13 +39,7 @@ export default function CustomCSSTabItem() {
   };
 
   return (
-    <div className="overflow-auto min-h-[calc(100dvh-146px)] p-6">
-      <SimpleText className="mb-1" weight="font-semibold">
-        Custom styles
-      </SimpleText>
-      <SimpleText color="secondary-700" className="text-sm mb-6 max-w-[248px]" weight="font-medium">
-        Add your custom styles and make your widget outstanding.
-      </SimpleText>
+    <>
       <div className="mb-6 min-h-[300px]">
         <Editor
           theme={theme === "dark" ? "vs-dark" : "vs-light"}
@@ -65,7 +73,7 @@ export default function CustomCSSTabItem() {
       <Button isLoading={isPending} className="w-full mt-6" onPress={handleSave}>
         Apply changes
       </Button>
-    </div>
+    </>
   );
 }
 

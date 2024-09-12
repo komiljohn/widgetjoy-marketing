@@ -52,10 +52,10 @@ export default function SimpleTestimonialTabContent({ id }: { id: "simple" | "vi
           {id === "simple" && <FormTextInput type="multiline" name="testimonial" label="Testimonial" />}
           {id === "simple" ? <FormImageUpload name="photo" /> : <FormDragndropUpload name="photo" />}
           <Divider />
-          <div className="flex items-center justify-between">
-            <div className="flex gap-4">
-              <DatePicker name="date" />
-              <FormSelect name="source" placeholder="Choose source">
+          <div className="flex items-center justify-between max-sm:flex-col">
+            <div className="flex gap-4 max-sm:flex-col max-sm:w-full">
+              <DatePicker name="date" className="max-sm:w-full" />
+              <FormSelect name="source" placeholder="Choose source" className="max-sm:w-full">
                 <MyListBoxItem id="1" className="gap-2 justify-between">
                   LinkedIn
                 </MyListBoxItem>
@@ -67,11 +67,11 @@ export default function SimpleTestimonialTabContent({ id }: { id: "simple" | "vi
                 </MyListBoxItem>
               </FormSelect>
             </div>
-            <div className="flex gap-3">
-              <Button variant="secondary" lefticon={<Trash2 size={20} />}>
+            <div className="flex gap-3 max-sm:w-full max-sm:mt-4">
+              <Button className="grow" variant="secondary" lefticon={<Trash2 size={20} />}>
                 Delete
               </Button>
-              <Button isLoading={isPending} type="submit" lefticon={<Save size={20} />}>
+              <Button className="grow" isLoading={isPending} type="submit" lefticon={<Save size={20} />}>
                 Save
               </Button>
             </div>

@@ -1,13 +1,17 @@
-import { CircleHelp, EllipsisVertical, Link2, Trash2 } from "lucide-react";
+import { CircleHelp, Code, EllipsisVertical, Link2, Trash2 } from "lucide-react";
 import React from "react";
 import { Menu, MenuItem, MenuTrigger, Popover } from "react-aria-components";
 
 import { Button } from "@/components/ui/button";
 import { SimpleText } from "@/components/ui/typography";
 import { toastQueue } from "@/providers/ToastProvider";
+import { useModalStore } from "@/store/useModalStore";
+import { Modals } from "@/utils/constants";
 import Routes from "@/utils/routes";
 
 export default function WidgetDetailsDropdown() {
+  const { setActiveModal } = useModalStore();
+
   const handleDelete = () => {
     toastQueue.add({
       title: "Widget deleted",
@@ -33,6 +37,15 @@ export default function WidgetDetailsDropdown() {
         className="py-[7px] px-2 w-[231px] bg-white dark:bg-bg-primary-dark outline-none border border-border-secondary dark:border-border-dark-primary rounded-md shadow-popup entering:animate-in entering:fade-in exiting:animate-out exiting:fade-out"
       >
         <Menu className="outline-none">
+          <MenuItem
+            onAction={() => setActiveModal(Modals.embed_code)}
+            className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark flex items-center gap-2 p-3 lg:hidden"
+          >
+            <Code size={20} className="text-text-secondary dark:text-white" />
+            <SimpleText tag="span" color="primary-900" className="mr-2" weight="font-semibold">
+              Get embed code
+            </SimpleText>
+          </MenuItem>
           <MenuItem
             onAction={handleCopy}
             className="outline-none bg-transparent rounded-md cursor-pointer focus:bg-disabled focus:dark:bg-active-dark flex items-center gap-2 p-3"

@@ -32,7 +32,7 @@ export default function MyColorPicker({ label }: MyColorPickerProps) {
         </Button>
       </div>
       <MyPopover>
-        <div className="bg-white rounded-md">
+        <div className="bg-white dark:bg-bg-primary-dark rounded-md">
           <HexAlphaColorPicker color={color} onChange={setColor} />
           <HexColorInput
             prefixed

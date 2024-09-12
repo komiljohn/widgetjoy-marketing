@@ -31,8 +31,12 @@ export default function TestimonialModal() {
         </SimpleText>
         <Tabs>
           <TabList aria-label="History of Ancient Rome">
-            <Tab id="simple">Simple testimonial</Tab>
-            <Tab id="video">Video testimonial</Tab>
+            <Tab className="max-sm:px-1" id="simple">
+              Simple testimonial
+            </Tab>
+            <Tab className="max-sm:px-1" id="video">
+              Video testimonial
+            </Tab>
           </TabList>
           <TabPanel id="simple">
             <SimpleTestimonialTabContent id="simple" />

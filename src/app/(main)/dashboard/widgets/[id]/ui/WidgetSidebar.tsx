@@ -44,7 +44,7 @@ export default function WidgetSidebar() {
   };
 
   return (
-    <div className="flex relative">
+    <div className="flex relative max-sm:hidden">
       <Menu
         aria-label="Sidebar menu"
         className="w-[110px] border-r border-border-secondary dark:border-active-dark py-2"

@@ -5,7 +5,9 @@ import React, { ReactNode } from "react";
 
 import Routes from "@/utils/routes";
 
+import WidgetBottombarMobile from "./WidgetBottombarMobile";
 import WidgetHeader from "./WidgetHeader";
+import WidgetHeaderMobile from "./WidgetHeaderMobile";
 import WidgetSidebar from "./WidgetSidebar";
 
 export default function WidgetLayoutWrapper({ children }: { children: ReactNode }) {
@@ -23,9 +25,11 @@ export default function WidgetLayoutWrapper({ children }: { children: ReactNode 
   ) : (
     <div className="flex flex-col">
       <WidgetHeader />
-      <div className="flex bg-white dark:bg-bg-primary-dark grow overflow-auto min-h-[calc(100dvh-146px)]">
+      <WidgetHeaderMobile />
+      <div className="flex max-sm:flex-col max-sm:justify-between bg-white dark:bg-bg-primary-dark grow overflow-auto min-h-[calc(100dvh-146px)] max-sm:min-h-[calc(100dvh-209px)]">
         <WidgetSidebar />
-        <div className="w-full bg-dots flex justify-center items-center">{children}</div>
+        <div className="w-full bg-dots flex justify-center items-center grow">{children}</div>
+        <WidgetBottombarMobile />
       </div>
     </div>
   );

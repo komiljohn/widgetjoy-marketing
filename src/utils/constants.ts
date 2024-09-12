@@ -1,5 +1,7 @@
 export enum Sheets {
   menu = "menu",
+  widget_actions = "widget_actions",
+  widget_tabs = "widget_tabs",
 }
 export enum Modals {
   team_member = "team_member",

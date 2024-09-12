@@ -1,3 +1,5 @@
+"use client";
+
 import {
   animate,
   AnimatePresence,
@@ -29,7 +31,7 @@ const staticTransition = {
 const SHEET_MARGIN = 34;
 const SHEET_RADIUS = 24;
 
-const root = document.body.firstChild as HTMLElement;
+const root = document?.body.firstChild as HTMLElement;
 
 interface Props {
   children: ReactNode;
@@ -86,7 +88,7 @@ export default function BottomSheet({ isOpen, setIsOpen, children }: Props) {
           >
             {/* drag affordance */}
             {/* <div className="mx-auto w-12 mt-2 h-1.5 rounded-full bg-gray-400" /> */}
-            <Dialog className="outline-none bg-red-500 max-h-fit">{children}</Dialog>
+            <Dialog className="outline-none max-h-fit">{children}</Dialog>
           </MotionModal>
         </MotionModalOverlay>
       )}
