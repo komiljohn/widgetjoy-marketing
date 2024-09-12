@@ -71,7 +71,7 @@ export default function Table({
       <AriaTable
         aria-label="Files"
         selectionMode="multiple"
-        dragAndDropHooks={dragAndDropHooks}
+        dragAndDropHooks={isDraggable ? dragAndDropHooks : undefined}
         className="rounded-xl w-full overflow-x-auto"
       >
         <TableHeader>
