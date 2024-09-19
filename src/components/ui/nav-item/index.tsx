@@ -13,10 +13,10 @@ export interface NavItemProps {
 }
 
 const button = tv({
-  base: "bg-white hover:bg-disabled dark:hover:bg-active-dark transition rounded-md flex gap-4 items-center justify-center w-full cursor-pointer font-semibold size-fit px-[13px] py-2 border-none text-base shadow-none focus-ring dark:text-secondary-700 dark:bg-transparent",
+  base: "transition rounded-md flex gap-4 items-center justify-center w-full cursor-pointer font-medium size-fit border-none text-base shadow-none focus-ring text-primary-900",
   variants: {
     isActive: {
-      true: "bg-disabled dark:bg-active-dark dark:text-secondary-hover",
+      true: "text-brand-500",
     },
   },
 });
@@ -25,7 +25,7 @@ export function NavItem(props: NavItemProps) {
   const pathname = usePathname();
 
   return (
-    <Link {...props} className={twMerge(props.className, button({ isActive: pathname.startsWith(props.href) }))}>
+    <Link {...props} className={twMerge(button({ isActive: pathname.startsWith(props.href) }), props.className)}>
       {props.lefticon}
       <>{props.children}</>
       {props.rightIcon}

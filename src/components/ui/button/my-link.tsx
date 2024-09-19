@@ -13,7 +13,7 @@ export default function MyLink({ className, href, children }: Props) {
     <Link
       href={href}
       className={twMerge(
-        "rounded-sm focus-ring text-brand-500 dark:text-brand-500 hover:text-brand-600 disabled:dark:text-fg-disabled",
+        "rounded-sm focus-ring text-brand-500 dark:text-brand-500 hover:text-brand-600 disabled:dark:text-fg-disabled font-medium",
         className
       )}
     >

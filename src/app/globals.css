@@ -4,14 +4,7 @@
 
 body {
   color: #101828;
-  background: #f9fafb;
-}
-.dark body {
-  color: #f5f5f6;
-  background: #161b26;
-}
-
-body {
+  background: #fcfcfd;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -29,13 +22,10 @@ body {
 }
 
 .login-shadow {
-  box-shadow:
-    0px 1px 3px 0px #8f8f8f33,
-    0px -2.4px 0px 0px #3e3e3e0a inset;
+  box-shadow: 0px 1px 3px 0px #8f8f8f33, 0px -2.4px 0px 0px #3e3e3e0a inset;
 }
 
 @layer components {
-  .dark .focus-ring,
   .focus-ring {
     outline: 2px solid transparent;
     outline-offset: 2px;
@@ -46,17 +36,4 @@ body {
       outline-color: transparent;
     }
   }
-}
-
-.bg-dots {
-  background: #fcfcfd;
-  background-image: radial-gradient(#d0d5dd 0.5px, transparent 0);
-  background-size: 7px 7px;
-  background-position: -1px -1px;
-}
-.dark .bg-dots {
-  background: #111621;
-  background-image: radial-gradient(#2e2b2b 0.5px, transparent 0);
-  background-size: 7px 7px;
-  background-position: -1px -1px;
 }

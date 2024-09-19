@@ -27,12 +27,27 @@ interface TextInputProps extends TextFieldProps {
   type?: "multiline";
   lefticon?: ReactElement;
   className?: string;
+  isDark?: boolean;
+  inputClassName?: string;
 }
 
 export const textInputStyles =
-  "w-full border shadow-input dark:shadow-xs rounded-lg py-[7px] px-[11px] placeholder:text-text-disabled placeholder:text-base text-base text-primary-900 disabled:bg-disabled dark:bg-bg-primary-dark dark:text-primary-dark-900 dark:border-border-dark-primary dark:focus:border-brand-600 focus:border-border-brand outline-none focus:border-brand-600 focus:shadow-button-ring dark:focus:shadow-button-ring";
+  "w-full border  rounded-lg py-[7px] px-[11px] placeholder:text-text-disabled placeholder:text-base text-base disabled:bg-disabled outline-none focus:border-brand-600 shadow-input focus:shadow-button-ring text-primary-900 focus:border-brand-600";
 
-export function TextInput({ lefticon, label, error, placeholder, type, isRequired, ...props }: TextInputProps) {
+const darkStyles =
+  "shadow-xs focus:shadow-button-ring bg-gray-light-800 text-primary-dark-900 border-border-dark-primary focus:border-brand-600";
+
+export function TextInput({
+  lefticon,
+  label,
+  error,
+  placeholder,
+  type,
+  isRequired,
+  inputClassName,
+  isDark,
+  ...props
+}: TextInputProps) {
   const clonedIcon = lefticon
     ? cloneElement(lefticon, { className: "absolute left-[13px] top-[calc(50%-10px)] text-text-disabled" })
     : null;
@@ -49,13 +64,23 @@ export function TextInput({ lefticon, label, error, placeholder, type, isRequire
           <TextArea
             rows={4}
             placeholder={placeholder}
-            className={twMerge(textInputStyles, error && "border-brand-600 focus:border-brand-600")}
+            className={twMerge(
+              textInputStyles,
+              isDark && darkStyles,
+              inputClassName,
+              error && "border-brand-600 focus:border-brand-600"
+            )}
             style={{ paddingLeft: lefticon ? "41px" : "11px" }}
           />
         ) : (
           <Input
             placeholder={placeholder}
-            className={twMerge(textInputStyles, error && "border-brand-600 focus:border-brand-600")}
+            className={twMerge(
+              textInputStyles,
+              isDark && darkStyles,
+              inputClassName,
+              error && "border-brand-600 focus:border-brand-600"
+            )}
             style={{ paddingLeft: lefticon ? "41px" : "11px" }}
           />
         )}
