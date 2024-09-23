@@ -26,8 +26,7 @@ const animationVariants = {
 };
 
 export default function Carousel() {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [AutoScroll({ playOnInit: false })]);
-  console.log("object");
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [AutoScroll({ playOnInit: true })]);
 
   return (
     <motion.div
