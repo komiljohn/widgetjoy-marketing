@@ -25,7 +25,7 @@ export function NavItem(props: NavItemProps) {
   const pathname = usePathname();
 
   return (
-    <Link {...props} className={twMerge(button({ isActive: pathname.startsWith(props.href) }), props.className)}>
+    <Link {...props} className={twMerge(button({ isActive: pathname === props.href }), props.className)}>
       {props.lefticon}
       <>{props.children}</>
       {props.rightIcon}

@@ -1,0 +1,27 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+.card {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  border-radius: inherit;
+  background: conic-gradient(from var(--gradient-angle), #fff 0%, #ff4405 50%, #fff 50%);
+  animation: rotation 10s linear infinite;
+  filter: blur(0px);
+  z-index: -1;
+}

@@ -69,6 +69,7 @@ const config: Config = {
         "bg-input-dark": "#231E1C",
         "moss-500": "#669F2A",
         "error-500": "#F04438",
+        "accordion-answer": "#0F132499",
       },
       boxShadow: {
         input: "0px 2px 2px 0px #E2E2EC33",

@@ -26,14 +26,14 @@ const animationVariants = {
 };
 
 export default function Carousel() {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [AutoScroll({ playOnInit: true })]);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [AutoScroll({ playOnInit: false })]);
+  console.log("object");
 
   return (
     <motion.div
       variants={animationVariants}
       initial="initial"
-      whileInView="inView"
-      viewport={{ once: true }}
+      animate="inView"
       className="overflow-hidden w-full mx-auto flex items-center justify-center touch-pan-y touch-pinch-zoom py-6"
       ref={emblaRef}
     >
