@@ -12,7 +12,7 @@ import BannerButtons from "./BannerButtons";
 
 export default function Banner() {
   return (
-    <section className="pt-[162px]">
+    <section className="pt-[162px] overflow-x-hidden">
       <div className="mx-auto max-w-[724px] text-center mb-[100px]">
         <OpacityWhenVisible className="flex mx-auto gap-4 py-[5px] px-[15px] border border-border-secondary rounded-full w-fit shadow-[0px_2px_2px_0px_#0A0A0A0D] mb-10">
           <div className="flex items-center gap-1">

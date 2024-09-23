@@ -51,7 +51,9 @@ export default function Accordion({ data }: { data: { id: string; answer: string
                       variants={{ collapsed: { scale: 0.95 }, open: { scale: 1 } }}
                       transition={{ duration: 0.4 }}
                     >
-                      <SimpleText className="text-accordion-answer">{item.answer}</SimpleText>
+                      <SimpleText tag="span" className="text-accordion-answer">
+                        {item.answer}
+                      </SimpleText>
                     </motion.p>
                   </motion.div>
                 )}
