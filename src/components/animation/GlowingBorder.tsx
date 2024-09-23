@@ -9,6 +9,7 @@ export default function GlowingBorder({ className, isVisible }: { className?: st
     <AnimatePresence>
       {isVisible && (
         <motion.div
+          data-visible={isVisible}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
