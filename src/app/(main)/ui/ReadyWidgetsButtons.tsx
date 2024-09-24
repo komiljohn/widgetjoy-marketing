@@ -7,12 +7,14 @@ import { Button } from "@/components/ui/button";
 
 export default function ReadyWidgetsButtons() {
   return (
-    <div className="flex gap-4 justify-center">
+    <div className="flex gap-4 justify-center max-sm:flex-col">
       <ScaleFadeInWhenVisible delay={0.3}>
-        <Button size="lg">Start creating</Button>
+        <Button className="max-sm:w-full" size="lg">
+          Start creating
+        </Button>
       </ScaleFadeInWhenVisible>
       <ScaleFadeInWhenVisible delay={0.4}>
-        <Button variant="secondary" size="lg">
+        <Button className="max-sm:w-full" variant="secondary" size="lg">
           Discover widgets
         </Button>
       </ScaleFadeInWhenVisible>

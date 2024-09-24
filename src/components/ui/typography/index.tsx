@@ -11,7 +11,7 @@ interface ISimpleText {
   children: ReactNode;
 }
 
-type ColorTypes = "primary-900" | "quaternary-500" | "tertiary-600" | "secondary-700";
+type ColorTypes = "primary-900" | "quaternary-500" | "tertiary-600" | "secondary-700" | "overlay-950";
 
 function getColorVariant(color: ColorTypes) {
   switch (color) {
@@ -23,6 +23,8 @@ function getColorVariant(color: ColorTypes) {
       return "text-tertiary-600 dark:text-tertiary-dark-600";
     case "secondary-700":
       return "text-button-secondary-fg dark:text-secondary-700";
+    case "overlay-950":
+      return "text-bg-overlay";
   }
 }
 

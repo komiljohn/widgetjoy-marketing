@@ -17,7 +17,7 @@ import { LogoSvg } from "../../../../public/icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-bg-primary-dark px-12">
+    <footer className="bg-bg-primary-dark px-12 max-sm:px-6">
       <div className="pt-20 pb-12 flex justify-between items-center max-md:gap-12 max-md:flex-col">
         <LogoSvg className="fill-white" />
         <EmailForm />

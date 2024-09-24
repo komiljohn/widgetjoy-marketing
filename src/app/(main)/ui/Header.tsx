@@ -20,6 +20,7 @@ export default function Header() {
           <div className="flex gap-8 max-lg:hidden">
             <NavItem href="/">Widgets</NavItem>
             <NavItem href={Routes.pricing}>Pricing</NavItem>
+            <NavItem href={Routes.explore}>Explore</NavItem>
           </div>
         </div>
         <div className="flex gap-4">
