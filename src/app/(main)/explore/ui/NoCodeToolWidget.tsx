@@ -11,7 +11,7 @@ import ExploreFeatures from "./ExploreFeatures";
 
 export default function NoCodeToolWidget() {
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-4">
       <div className="max-w-[1200px] mx-auto">
         <FadeInWhenVisible
           viewport={{ margin: "300px" }}
@@ -93,7 +93,7 @@ export default function NoCodeToolWidget() {
               </SimpleText>
             </FadeInWhenVisible>
             <ScaleFadeInWhenVisible delay={0.3}>
-              <ClientButton size="lg" variant="secondary" rightIcon={<ArrowUpRight />}>
+              <ClientButton size="lg" variant="secondary" className="max-md:py-[7px]" rightIcon={<ArrowUpRight />}>
                 Explore blocks
               </ClientButton>
             </ScaleFadeInWhenVisible>

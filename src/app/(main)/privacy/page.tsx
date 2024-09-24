@@ -6,7 +6,7 @@ import PrivacyContent from "./ui/PrivacyContent";
 
 export default function Page() {
   return (
-    <main className="px-6">
+    <main className="px-4">
       <PrivacyBanner />
       <PrivacyContent />
       <ReadyWidgetsCTA />

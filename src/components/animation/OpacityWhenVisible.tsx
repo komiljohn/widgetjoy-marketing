@@ -17,7 +17,7 @@ export default function OpacityWhenVisible({ children, ...props }: Props) {
       whileInView={{
         opacity: 1,
       }}
-      viewport={{ once: true, amount: "all", ...props.viewport }}
+      viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px", ...props.viewport }}
       className={props.className ?? ""}
     >
       {children}

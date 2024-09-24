@@ -9,7 +9,7 @@ import WandSvg from "../icons/wand.svg";
 
 export default function ExploreFeatures() {
   return (
-    <section className="grid grid-cols-3 gap-6 mt-8 max-md:grid-cols-1">
+    <section className="grid grid-cols-3 gap-6 mt-8 max-md:grid-cols-1 max-md:gap-0">
       {features.map((item, idx) => (
         <FadeInWhenVisible key={item.title} delay={0.1 + idx / 10}>
           <article className="p-4">

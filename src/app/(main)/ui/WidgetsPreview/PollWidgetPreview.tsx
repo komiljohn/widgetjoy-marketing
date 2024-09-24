@@ -4,8 +4,8 @@ import { SimpleText } from "@/components/ui/typography";
 
 export default function PollWidgetPreview() {
   return (
-    <div className="bg-white border dark:border-active-dark border-border-secondary rounded-[18px] dark:bg-bg-primary-dark mx-auto w-[69%] shadow-[0px_12px_12px_-8px_#8889961A,0px_-6px_0px_0px_#ECECEC66_inset] p-[27px] mb-4 h-fit">
-      <div className="dark:bg-brand-dark-noisy bg-[#FFF6F3] p-2.5 rounded-md mb-[9px] z-10">
+    <div className="bg-white border dark:border-active-dark border-border-secondary rounded-[18px] dark:bg-bg-primary-dark mx-auto w-[69%] shadow-[0px_12px_12px_-8px_#8889961A,0px_-6px_0px_0px_#ECECEC66_inset] p-[27px] mb-4 h-fit z-10">
+      <div className="dark:bg-brand-dark-noisy bg-[#FFF6F3] p-2.5 rounded-md mb-[9px]">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <div className="size-2.5 bg-brand-500 rounded-full border-[3px] border-transparent shadow-[0_0_0_3px_#fff,0_0_0_4px_#ff4f18] dark:shadow-[0_0_0_3px_#18141D,0_0_0_4px_#ff4f18]"></div>

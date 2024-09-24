@@ -10,7 +10,7 @@ export default function TrasnformExperience() {
     <section className="pt-[120px] pb-[200px] px-12">
       <div className="max-w-[532px] mx-auto text-center mb-[98px]">
         <FadeInWhenVisible>
-          <SimpleText className="text-bg-overlay text-5xl leading-[60px] font-bold mb-[18px] tracking-tight">
+          <SimpleText className="text-bg-overlay text-5xl max-md:text-4xl leading-[60px] font-bold mb-[18px] tracking-tight">
             Transform Your Website Experience
           </SimpleText>
         </FadeInWhenVisible>

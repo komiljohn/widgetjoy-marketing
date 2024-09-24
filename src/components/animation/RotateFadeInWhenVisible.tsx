@@ -28,7 +28,7 @@ export default function RotateFadeInWhenVisible({ children, delay, ...props }: P
           delay,
         },
       }}
-      viewport={{ once: true, amount: "all", ...props.viewport }}
+      viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px", ...props.viewport }}
     >
       {children}
     </motion.div>

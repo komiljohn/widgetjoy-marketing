@@ -12,9 +12,9 @@ import BannerButtons from "./BannerButtons";
 
 export default function Banner() {
   return (
-    <section className="pt-[162px] overflow-x-hidden">
-      <div className="mx-auto max-w-[724px] text-center mb-[100px]">
-        <OpacityWhenVisible className="flex mx-auto gap-4 py-[5px] px-[15px] border border-border-secondary rounded-full w-fit shadow-[0px_2px_2px_0px_#0A0A0A0D] mb-10">
+    <section className="pt-[162px] max-md:pt-20 overflow-x-hidden px-4">
+      <div className="mx-auto max-w-[724px] text-center mb-[100px] max-md:mb-[90px]">
+        <OpacityWhenVisible className="flex mx-auto gap-4 py-[5px] px-[15px] border border-border-secondary rounded-full w-fit shadow-[0px_2px_2px_0px_#0A0A0A0D] mb-10 max-md:mb-6">
           <div className="flex items-center gap-1">
             <StarsSvg />
             <SimpleText color="tertiary-600" tag="span" weight="font-medium">
@@ -27,12 +27,12 @@ export default function Banner() {
           </MyLink>
         </OpacityWhenVisible>
         <FadeInWhenVisible>
-          <h1 className="text-bg-primary-dark font-bold text-[60px] leading-[72px] mb-6 tracking-tight">
+          <h1 className="text-bg-primary-dark font-bold text-[60px] leading-[72px] max-md:text-4xl mb-6 max-md:mb-4 tracking-tight">
             The "Swiss Army Knife" of Widgets
           </h1>
         </FadeInWhenVisible>
         <FadeInWhenVisible delay={0.1}>
-          <h2 className="text-button-secondary-fg text-[20px] leading-[30px] mb-10 max-w-[494px] mx-auto">
+          <h2 className="text-button-secondary-fg text-[20px] leading-[30px] mb-10 max-w-[494px] mx-auto max-md:mb-5">
             10+ powerful widgets to supercharge your website, engage visitors, and boost results.
           </h2>
         </FadeInWhenVisible>

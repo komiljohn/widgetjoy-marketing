@@ -11,10 +11,10 @@ import { testimonials } from "../utils/fakeData";
 
 export default function Testimonials() {
   return (
-    <section className="py-20">
-      <div className="max-w-[532px] mx-auto text-center mb-20">
+    <section className="py-20 px-4 max-md:py-10">
+      <div className="max-w-[532px] mx-auto text-center mb-20 max-md:mb-6">
         <FadeInWhenVisible>
-          <SimpleText className="text-bg-overlay text-5xl leading-[60px] font-bold mb-[18px] tracking-tight">
+          <SimpleText className="text-bg-overlay text-5xl max-md:text-4xl leading-[60px] font-bold mb-[18px] tracking-tight">
             Hear From Our Customers
           </SimpleText>
         </FadeInWhenVisible>
@@ -22,7 +22,7 @@ export default function Testimonials() {
           <SimpleText className="text-text-disabled text-lg px-12">Experiences that speak for themselves.</SimpleText>
         </FadeInWhenVisible>
       </div>
-      <div className="grid grid-cols-3 gap-6 max-w-[1200px] mx-auto">
+      <div className="grid grid-cols-3 gap-6 max-xl:gap-4 max-w-[1200px] mx-auto max-lg:grid-cols-2 max-sm:grid-cols-1">
         {testimonials.map((item, idx) => (
           <FadeInWhenVisible
             delay={(idx + 1) / 10}

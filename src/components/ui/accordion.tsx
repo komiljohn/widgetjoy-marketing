@@ -14,21 +14,21 @@ export default function Accordion({ data }: { data: { id: string; answer: string
     <div>
       {data.map((item, idx) => (
         <>
-          <section key={item.id} className="px-5">
+          <section key={item.id} className="px-5 max-md:px-3">
             <button
               aria-expanded={activeId === item.id}
               aria-controls="accordion-content"
               onClick={() => setActiveId((p) => (p === item.id ? null : item.id))}
               className="py-[15px] flex items-center justify-between gap-3 w-full focus-ring rounded-md"
             >
-              <SimpleText className="text-lg" weight="font-semibold" tag="span">
+              <SimpleText className="text-lg text-start" weight="font-semibold" tag="span">
                 {item.question}
               </SimpleText>
               <ChevronDown
                 size={20}
                 color="#667085"
                 className={twMerge(
-                  "transition-transform duration-400",
+                  "transition-transform duration-400 min-w-5",
                   activeId === item.id ? "rotate-180" : "rotate-0"
                 )}
               />
@@ -42,7 +42,10 @@ export default function Accordion({ data }: { data: { id: string; answer: string
                     animate="open"
                     exit="collapsed"
                     variants={{
-                      open: { opacity: 1, height: "auto" },
+                      open: {
+                        opacity: 1,
+                        height: "auto",
+                      },
                       collapsed: { opacity: 0, height: 0 },
                     }}
                     transition={{ duration: 0.2 }}

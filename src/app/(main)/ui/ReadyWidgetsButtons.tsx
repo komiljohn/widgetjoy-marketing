@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default function ReadyWidgetsButtons() {
   return (
-    <div className="flex gap-4 justify-center max-sm:flex-col">
+    <div className="flex gap-4 justify-center max-sm:flex-col max-md:gap-3">
       <ScaleFadeInWhenVisible delay={0.3}>
         <Button className="max-sm:w-full" size="lg">
           Start creating

@@ -5,9 +5,9 @@ import OpacityWhenVisible from "@/components/animation/OpacityWhenVisible";
 
 export default function PricingBanner() {
   return (
-    <section className="pt-[162px]">
-      <div className="mx-auto max-w-[724px] text-center mb-[100px]">
-        <OpacityWhenVisible className="flex mx-auto gap-4 py-[5px] px-[15px] border border-border-secondary rounded-full w-fit shadow-[0px_2px_2px_0px_#0A0A0A0D] mb-9">
+    <section className="pt-[162px] pb-[191px] px-4 max-md:pt-20 max-md:pb-[90px]">
+      <div className="mx-auto max-w-[724px] text-center">
+        <OpacityWhenVisible className="flex mx-auto gap-4 py-[5px] px-[15px] border border-border-secondary rounded-full w-fit shadow-[0px_2px_2px_0px_#0A0A0A0D] mb-9 max-md:mb-6">
           <span
             className="font-medium"
             style={{
@@ -20,7 +20,7 @@ export default function PricingBanner() {
           </span>
         </OpacityWhenVisible>
         <FadeInWhenVisible>
-          <h1 className="text-bg-primary-dark font-bold text-[60px] leading-[72px] mb-6 tracking-tight">
+          <h1 className="text-bg-primary-dark font-bold text-[60px] leading-[72px] mb-6 max-md:text-4xl max-md:mb-4 tracking-tight">
             Reach more people, get more results
           </h1>
         </FadeInWhenVisible>

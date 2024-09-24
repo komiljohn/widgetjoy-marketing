@@ -40,7 +40,7 @@ export default function Carousel() {
         {widgets.map((item) => (
           <article
             key={item.id}
-            className="shadow-xs border border-border-secondary rounded-3xl dark:border-border-dark-primary h-fit flex-[0_0_376px] mr-8"
+            className="shadow-xs border border-border-secondary rounded-3xl dark:border-border-dark-primary h-fit flex-[0_0_376px] max-md:flex-[0_0_326px] mr-8"
           >
             <div
               className={twMerge(
