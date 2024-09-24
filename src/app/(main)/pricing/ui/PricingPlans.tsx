@@ -24,7 +24,7 @@ export default function PricingPlans() {
             )}
           >
             {item.isMostPopular && (
-              <Badge className="absolute -top-[18px] left-1/2 -translate-x-1/2 text-base py-[5px] px-[15px] shadow-[0px_2px_2px_0px_#0A0A0A0D] bg-brand-logo text-white">
+              <Badge className="absolute -top-[18px] left-1/2 -translate-x-1/2 text-base py-[5px] px-[15px] bg-brand-logo text-white border-none">
                 Most popular
               </Badge>
             )}
